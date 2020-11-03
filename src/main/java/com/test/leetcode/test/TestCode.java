@@ -33,6 +33,13 @@ public class TestCode {
         int volume = 2 << 10; //2048
         System.out.println(volume);
         int bitNum = volume - 1; //11111111111
-        System.out.println(1111111&bitNum);
+        System.out.println(1111111 & bitNum);
+    }
+
+    @Test
+    public void test2() {
+        System.out.println(1 << 4 & -1);
+        System.out.println(~1);
+        System.out.println(Integer.toBinaryString(-1));
     }
 }
