@@ -22,4 +22,11 @@ public class StringTest {
         System.out.println("Exchange_Coupon".toLowerCase());
         System.out.println("ELECTRONIC_INSURANCE_CLIENT_ID".replaceAll("_", ".").toLowerCase());
     }
+
+    @Test
+    public void test1() {
+        int i = 1;
+        i *= 2 + 1;
+        System.out.println(i);
+    }
 }
