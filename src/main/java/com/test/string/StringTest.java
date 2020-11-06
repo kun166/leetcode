@@ -18,7 +18,8 @@ public class StringTest {
 
     @Test
     public void test() {
-        System.out.println("ElectronicInsurance".toUpperCase());
+        System.out.println("Exchange_Coupon".toUpperCase());
+        System.out.println("Exchange_Coupon".toLowerCase());
         System.out.println("ELECTRONIC_INSURANCE_CLIENT_ID".replaceAll("_", ".").toLowerCase());
     }
 }

@@ -37,9 +37,19 @@ public class TestCode {
     }
 
     @Test
-    public void test2() {
-        System.out.println(1 << 4 & -1);
-        System.out.println(~1);
-        System.out.println(Integer.toBinaryString(-1));
+    public void convert() {
+        for (String ss : new String[]{"create_time", "update_time", "is_delete"}) {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < ss.length(); i++) {
+                if (ss.charAt(i) == '_')
+                    continue;
+                if (i > 0 && ss.charAt(i - 1) == '_')
+                    sb.append(Character.toUpperCase(ss.charAt(i)));
+                else
+                    sb.append(ss.charAt(i));
+            }
+            System.out.println(sb.toString());
+        }
+
     }
 }
