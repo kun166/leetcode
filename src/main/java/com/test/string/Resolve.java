@@ -2,6 +2,9 @@ package com.test.string;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @program: leetcode
  * @description:
@@ -17,13 +20,25 @@ public class Resolve {
 //            resolve(n, i);
 //            System.out.println("----" + i);
 //        }
-
-        resolve(4, 23);
+        int n = 4;
+        List<Integer> list = new ArrayList<>();
+        for (int i = 1; i <= 4; i++) {
+            list.add(i);
+        }
+        int[] array = resolve(n, 1);
+        for (int i : array) {
+            System.out.print(i + ",");
+        }
+        StringBuilder sb = new StringBuilder();
+        for (int i = array.length - 1; i >= 0; i--) {
+            sb.append(list.remove(array[i]));
+        }
+        System.out.println(sb.toString());
     }
 
-    public void resolve(int n, int k) {
+    public int[] resolve(int n, int k) {
         // k怎么分解
-        int[] a = new int[n + 1];
+        int[] a = new int[n];
         int num = 1, index = 1;
         while (num < k) {
             index++;
@@ -39,8 +54,6 @@ public class Resolve {
                 index--;
             }
         }
-        for (int i : a) {
-            System.out.print(i + ",");
-        }
+        return a;
     }
 }
