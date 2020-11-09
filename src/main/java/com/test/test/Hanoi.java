@@ -1,12 +1,20 @@
 package com.test.test;
 
+import org.junit.Test;
+
 /**
  * Created by qinfajia on 2020/11/7.
  */
 public class Hanoi {
 
-    public void hanoi(int n) {
+    @Test
+    public void test() {
+        hanoi(4);
+    }
 
+
+    public void hanoi(int n) {
+        hanoi(n, "A", "B", "C");
     }
 
     /**
@@ -19,7 +27,13 @@ public class Hanoi {
         if (n == 1)
             System.out.println(n + " from " + a + " to " + c);
         else if (n == 2) {
-            System.out.println("from ");
+            System.out.println(1 + " from " + a + " to " + b);
+            System.out.println(2 + " from " + a + " to " + c);
+            System.out.println(1 + " from " + b + " to " + c);
+        } else {
+            hanoi(n - 1, a, c, b);
+            System.out.println(n + " from " + a + " to " + c);
+            hanoi(n - 1, b, a, c);
         }
     }
 }
