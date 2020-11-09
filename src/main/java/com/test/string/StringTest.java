@@ -29,4 +29,22 @@ public class StringTest {
         i *= 2 + 1;
         System.out.println(i);
     }
+
+    @Test
+    public void test2() {
+        System.out.println("What   must   be".length());
+    }
+
+
+    @Test
+    public void test3() {
+        for (int i = 0; i < 100; i++) {
+            StringBuilder sb = new StringBuilder();
+            sb.append(" insert into exchange_coupon(coupon_code,coupon_value,coupon_description,coupon_name,coupon_exchange_code) ");
+            sb.append(" values('HMB-30','30','30元优惠券','清洁券','CBA");
+            sb.append(i);
+            sb.append("') ;");
+            System.out.println(sb.toString());
+        }
+    }
 }
