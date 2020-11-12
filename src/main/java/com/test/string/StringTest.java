@@ -18,7 +18,7 @@ public class StringTest {
 
     @Test
     public void test() {
-        System.out.println("Exchange_Coupon".toUpperCase());
+        System.out.println("repetition".toUpperCase());
         System.out.println("Exchange_Coupon".toLowerCase());
         System.out.println("ELECTRONIC_INSURANCE_CLIENT_ID".replaceAll("_", ".").toLowerCase());
     }
@@ -46,5 +46,14 @@ public class StringTest {
             sb.append("') ;");
             System.out.println(sb.toString());
         }
+    }
+
+    @Test
+    public void test4() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("/abc");
+        sb.lastIndexOf("/");
+        sb.delete(sb.lastIndexOf("/"), sb.length() - 1);
+        System.out.println(sb.toString());
     }
 }
