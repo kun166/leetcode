@@ -2,6 +2,9 @@ package com.test.test;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by qinfajia on 2020/11/7.
  */
@@ -9,7 +12,21 @@ public class Hanoi {
 
     @Test
     public void test() {
-        hanoi(4);
+        List<Thread> list = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            list.add(new Thread(() -> {
+                while (true) {
+                    double d = Math.sqrt(100.1d);
+                }
+            }));
+        }
+        for (Thread t : list) {
+            t.start();
+        }
+        while (true) {
+            double d = Math.sqrt(100.1d);
+        }
+
     }
 
 
