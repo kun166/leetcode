@@ -56,4 +56,20 @@ public class StringTest {
         sb.delete(sb.lastIndexOf("/"), sb.length() - 1);
         System.out.println(sb.toString());
     }
+
+    @Test
+    public void test5() {
+        String s = "update_id";
+        StringBuilder sb = new StringBuilder();
+        char[] array = s.toCharArray();
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == '_')
+                continue;
+            if (i > 0 && array[i - 1] == '_')
+                sb.append(Character.toUpperCase(array[i]));
+            else
+                sb.append(array[i]);
+        }
+        System.out.println(sb.toString());
+    }
 }
