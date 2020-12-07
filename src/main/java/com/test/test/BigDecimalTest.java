@@ -17,4 +17,9 @@ public class BigDecimalTest {
         BigDecimal b = new BigDecimal("0.0");
         System.out.println(b.compareTo(new BigDecimal("0")));
     }
+
+    @Test
+    public void test1(){
+        System.out.println(Integer.toBinaryString(2));
+    }
 }

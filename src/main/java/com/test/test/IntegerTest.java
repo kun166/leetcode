@@ -15,4 +15,13 @@ public class IntegerTest {
         int n = 1000000;
         System.out.println(n * n);
     }
+
+    @Test
+    public void test1() {
+        int n = 1;
+        for (int i = 0; i < 5; i++) {
+            n <<= 1;
+            System.out.println(n);
+        }
+    }
 }

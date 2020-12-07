@@ -14,7 +14,7 @@ public class Solution {
 
     @Test
     public void test() {
-        int[] array = new int[]{1, 4, 3, 2, 5, 2};
+        int[] array = new int[]{3, 1, 2};
         ListNode root = new ListNode(0);
         ListNode next = root;
         for (int i : array) {
@@ -32,30 +32,31 @@ public class Solution {
             return null;
         ListNode root = new ListNode(0);
         ListNode pre = null;
-        boolean find = false;
-        if (head.val >= x) {
-            pre = root;
-        } else {
+        ListNode more = null;
+        if (head.val < x) {
             root.next = head;
+        } else {
+            pre = root;
+            more = head;
         }
-        if (head.val == x)
-            find = true;
-        while (head != null) {
-            if (head.next != null && head.next.val >= x && pre == null) {
+        while (head != null && head.next != null) {
+            if (more == null && head.next.val >= x) {
+                more = head.next;
                 pre = head;
+            } else if (more != null && head.next.val < x) {
+                // 从原来的位置删除掉
+                ListNode next = head.next;
+                head.next = next.next;
+
+                // 接入到pre后面
+                pre.next = next;
+                pre = next;
+                continue;
             }
-            if (find && head.val < x) {
-                ListNode preNext = pre.next;
-                pre.next = head;
-                head = head.next;
-                pre.next.next = preNext;
-                pre = pre.next;
-            } else {
-                if (head.val == x)
-                    find = true;
-                head = head.next;
-            }
+            head = head.next;
         }
+        if (pre != null)
+            pre.next = more;
         return root.next;
     }
 }

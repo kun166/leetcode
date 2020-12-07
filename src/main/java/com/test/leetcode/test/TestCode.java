@@ -2,6 +2,10 @@ package com.test.leetcode.test;
 
 import org.junit.Test;
 
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Stack;
+
 /**
  * @program: study
  * @description:
@@ -51,5 +55,18 @@ public class TestCode {
             System.out.println(sb.toString());
         }
 
+    }
+
+    @Test
+    public void testStack() {
+        Stack<Integer> stack = new Stack<>();
+        stack.push(1);
+    }
+
+    @Test
+    public void textDeque() {
+        Deque<Integer> deque = new LinkedList<>();
+        deque.push(1);
+        deque.pop();
     }
 }
