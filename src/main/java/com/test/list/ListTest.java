@@ -1,8 +1,10 @@
 package com.test.list;
 
+import com.alibaba.fastjson.JSON;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -19,7 +21,27 @@ public class ListTest {
         for (int i = 0; i < 10; i++) {
             list.add(String.valueOf(i));
         }
-        list = list.subList(0, 5);
-        System.out.println(String.join(",", list));
+        List<String> subList = list.subList(0, 5);
+        System.out.println(String.join(",", subList));
+        subList = list.subList(5, 10);
+        System.out.println(String.join(",", subList));
+    }
+
+    @Test
+    public void test() {
+        List<Integer> list = new ArrayList<>();
+        Iterator<Integer> iterator = list.iterator();
+//        for (int i = 1; i <= 10; i++) {
+//            list.add(i);
+//        }
+
+        while (iterator.hasNext()) {
+            Integer i = iterator.next();
+            if (i == 5 || i == 6) {
+                iterator.remove();
+            }
+        }
+        System.out.println(JSON.toJSONString(list));
+
     }
 }

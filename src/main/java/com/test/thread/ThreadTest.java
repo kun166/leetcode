@@ -2,6 +2,10 @@ package com.test.thread;
 
 import org.junit.Test;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.FutureTask;
+
 /**
  * @program: study
  * @description:
@@ -55,5 +59,48 @@ public class ThreadTest {
 
     }
 
+    @Test
+    public void test() {
+        Thread myThread = new Thread() {
+            @Override
+            public void run() {
+                super.run();
+                System.out.println("执行子线程...");
+            }
+        };
+        myThread.start();
+        System.out.println("主线程...");
+    }
 
+    @Test
+    public void test1() {
+        FutureTask<String> ft = new FutureTask(() -> {
+            System.out.println("执行了");
+            return "哈哈";
+        });
+        ExecutorService service = Executors.newSingleThreadExecutor();
+        service.submit(ft);
+        //ft.run();
+        System.out.println("主线程执行");
+    }
+
+    @Test
+    public void test2() {
+        FutureTask<String> ft = new FutureTask(() -> {
+            System.out.println("执行了");
+            return "哈哈";
+        });
+        ExecutorService service = Executors.newSingleThreadExecutor();
+        service.submit(ft);
+        //ft.run();
+        System.out.println("主线程执行");
+    }
+
+    @Test
+    public void test3() {
+        ObjectWaitTest test = new ObjectWaitTest();
+        Thread t = new Thread(test);
+        t.start();
+        test.waitTest();
+    }
 }
