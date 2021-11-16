@@ -79,11 +79,8 @@ public class StringTest {
 
     @Test
     public void test4() {
-        String str = "CyclicBarrier 一个同步辅助类，它允许一组线程互相等待， 直到到达某个公共屏\n" +
-                "障点(common barrier point)。在涉及一组固定大小的线程的程序中，这些线程\n" +
-                "必须不时地互相等待，此时CyclicBarrier 很有用。因为该barrier 在释放等待\n" +
-                "线程后可以重用，所以称它为循环的barrier。";
-        System.out.println(str.replaceAll("\n", ""));
+        String str = "";
+        System.out.println(str.replaceAll("\n", "").replaceAll("\uF0B7", ""));
     }
 
 
@@ -144,7 +141,7 @@ public class StringTest {
 
     @Test
     public void test8() {
-        String str = "timestamp";
+        String str = "TK_EMPLOYER_PRODUCT_DETAIL_CODE_1";
         System.out.println(str.toUpperCase());
         System.out.println(str.toLowerCase());
     }
