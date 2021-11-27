@@ -79,8 +79,8 @@ public class StringTest {
 
     @Test
     public void test4() {
-        String str = "";
-        System.out.println(str.replaceAll("\n", "").replaceAll("\uF0B7", ""));
+        String str = "Java 通过面向对象的方法进行异常处理，把各种不同的异常进行分类，并提供了 良好的接口。在 Java 中，每个异常都是一个对象，它是 Throwable 类或其子类 的实例。当一个方法出现异常后便抛出一个异常对象，该对象中包含有异常信息，";
+        System.out.println(str.replaceAll("\n", ""));//.replaceAll("\uF0B7", ""));
     }
 
 
@@ -141,7 +141,7 @@ public class StringTest {
 
     @Test
     public void test8() {
-        String str = "TK_EMPLOYER_PRODUCT_DETAIL_CODE_1";
+        String str = "iterations";
         System.out.println(str.toUpperCase());
         System.out.println(str.toLowerCase());
     }

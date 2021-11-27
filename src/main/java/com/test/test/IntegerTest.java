@@ -34,7 +34,7 @@ public class IntegerTest {
 
     @Test
     public void test2() {
-        System.out.println(Integer.MAX_VALUE + 1);
+        System.out.println(3600 * 24 * 30);
     }
 
     @Test
