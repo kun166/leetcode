@@ -146,14 +146,9 @@ public class StringTest {
 
     @Test
     public void test8() {
-        String s1 = new StringBuilder("go").append("od").toString();
-        System.out.println(s1 == "good");
-        System.out.println(s1.intern() == s1);
-        //System.out.println(s1.intern() == "good");
-        //System.out.println(s1 == "good");
-
-        String s2 = new StringBuilder("ja").append("va").toString();
-        System.out.println(s2.intern() == s2);
+        String str = "timestamp";
+        System.out.println(str.toUpperCase());
+        System.out.println(str.toLowerCase());
     }
 
 
