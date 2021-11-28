@@ -79,10 +79,12 @@ public class StringTest {
 
     @Test
     public void test4() {
-        String str = "CyclicBarrier 一个同步辅助类，它允许一组线程互相等待， 直到到达某个公共屏\n" +
-                "障点(common barrier point)。在涉及一组固定大小的线程的程序中，这些线程\n" +
-                "必须不时地互相等待，此时CyclicBarrier 很有用。因为该barrier 在释放等待\n" +
-                "线程后可以重用，所以称它为循环的barrier。";
+        String str = "方法的重载和重写都是实现多态的方式，区别在于前者实现的是编译时的多态性，\n" +
+                "而后者实现的是运行时的多态性。重载发生在一个类中，同名的方法如果有不同\n" +
+                "的参数列表（参数类型不同、参数个数不同或者二者都不同）则视为重载；重写\n" +
+                "发生在子类与父类之间，重写要求子类被重写方法与父类被重写方法有相同的返\n" +
+                "回类型，比父类被重写方法更好访问，不能比父类被重写方法声明更多的异常（里\n" +
+                "氏代换原则）。重载对返回类型没有特殊的要求。";
         System.out.println(str.replaceAll("\n", ""));
     }
 
@@ -144,9 +146,14 @@ public class StringTest {
 
     @Test
     public void test8() {
-        String str = "timestamp";
-        System.out.println(str.toUpperCase());
-        System.out.println(str.toLowerCase());
+        String s1 = new StringBuilder("go").append("od").toString();
+        System.out.println(s1 == "good");
+        System.out.println(s1.intern() == s1);
+        //System.out.println(s1.intern() == "good");
+        //System.out.println(s1 == "good");
+
+        String s2 = new StringBuilder("ja").append("va").toString();
+        System.out.println(s2.intern() == s2);
     }
 
 
