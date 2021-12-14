@@ -1,6 +1,7 @@
 package com.test.string;
 
 import com.alibaba.fastjson.JSON;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
 import java.io.UnsupportedEncodingException;
@@ -16,6 +17,7 @@ import java.util.UUID;
  * @author: qinfajia
  * @create: 2020-07-06 09:56
  */
+@Slf4j
 public class StringTest {
 
     @Test
@@ -139,16 +141,22 @@ public class StringTest {
 
     @Test
     public void test7() {
-        String phone = "18610131362";
-        phone = phone.substring(0, 3) + "****" + phone.substring(7);
-        System.out.println(phone);
+        String str = "select t.id,t.insured_id,t.card_no,t.policy_no," +
+                "t.pay_amount,t.pay_status,t.remark,t.pay_time,t.business_license_url," +
+                "t.back_insured_type,t.insured_company,t.create_time,t.password122,t.account_name," +
+                "t.bank_name,t.bank_branch,t.bank_sort_oneId,t.bank_sort_twoId," +
+                "t.bank_code,t.card_front_url,t.card_back_url,t.apply_url,t.aid_url,t.auth_url," +
+                "t.pay_pic_url,t.update_time,t.jx_id,t1.jx_name,t1.bd_name,t2.name,t2.mobile," +
+                "t.exam_province,t.exam_city,t3.payTime,t4.premium,t.baosi_oper_time,t4.product_name " +
+                "from (select * from `t_jx_insurance_back_insured` ";
+        System.out.println(str);
     }
 
     @Test
     public void test8() {
         String str = "timestamp";
-        System.out.println(str.toUpperCase());
-        System.out.println(str.toLowerCase());
+        log.info(str.toUpperCase());
+        log.info(str.toLowerCase());
     }
 
 
