@@ -112,6 +112,7 @@ public class IntegerTest {
         int number = 1;
         number *= 26 * 26 + 25;
         System.out.println(number);
+        System.out.println(26 * 26 + 25);
     }
 
 

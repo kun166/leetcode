@@ -35,6 +35,7 @@ public class SolutionCenter {
             int len = Math.max(len_odd, len_even);
             // 计算对应最大回文子串的起点和终点
             if (len > end - start) {
+                // 这个地方很牛逼，通过这个技巧，直接解决了长度是奇数还是偶数的问题
                 start = i - (len - 1) / 2;
                 end = i + len / 2;
             }
@@ -59,6 +60,7 @@ public class SolutionCenter {
             right++;
         }
         // 回文串的长度是right-left+1-2 = right - left - 1
+        // 最后的left和rigth不符合while条件了，所以得-2
         return right - left - 1;
     }
 }

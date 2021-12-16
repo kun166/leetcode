@@ -7,6 +7,13 @@ package com.test.leetcode.page1.chapter0.t5;
  * @create: 2020-09-11 10:25
  */
 public class SolutionDynamic {
+
+    /**
+     * 这个动态规划方式挺牛逼的
+     *
+     * @param s
+     * @return
+     */
     public String longestPalindrome(String s) {
         int len = s.length();
         // 特判

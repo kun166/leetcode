@@ -42,25 +42,33 @@ public class SolutionOfficeFirst {
          * 如果 pivot = pivot2，那么 nums2[0 .. k/2-1] 都不可能是第 k 小的元素。把这些元素全部 "删除"，剩下的作为新的 nums2 数组
          * 由于我们 "删除" 了一些元素（这些元素都比第 k 小的元素要小），因此需要修改 k 的值，减去删除的数的个数
          */
-
-        int length1 = nums1.length, length2 = nums2.length;
-        int index1 = 0, index2 = 0;
-        int kthElement = 0;
+        // nums1的长度
+        int length1 = nums1.length;
+        // nums2的长度
+        int length2 = nums2.length;
+        // nums1的起始位置
+        int index1 = 0;
+        // nums2的起始位置
+        int index2 = 0;
 
         while (true) {
             // 边界情况
             if (index1 == length1) {
+                // 说明nums1已经结束了
                 return nums2[index2 + k - 1];
             }
             if (index2 == length2) {
+                // 说明nums2已经结束了
                 return nums1[index1 + k - 1];
             }
             if (k == 1) {
+                // 特殊情况，k==1
                 return Math.min(nums1[index1], nums2[index2]);
             }
 
-            // 正常情况
+            // 正常情况,取k的一半
             int half = k / 2;
+            // k/2-1和 length之中取小的
             int newIndex1 = Math.min(index1 + half, length1) - 1;
             int newIndex2 = Math.min(index2 + half, length2) - 1;
             int pivot1 = nums1[newIndex1], pivot2 = nums2[newIndex2];

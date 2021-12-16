@@ -17,6 +17,12 @@ public class Solution {
     }
 
 
+    /**
+     * 动态规划的方式。这种方式效率不高
+     *
+     * @param s
+     * @return
+     */
     public String longestPalindrome(String s) {
         int n = s.length();
         // 二位数组。第一个坐标是子串开始位置，第二个坐标是子串结束位置
@@ -32,7 +38,8 @@ public class Solution {
          *   # # # #
          *   # # # # #
          */
-        // 最外层这个循环的是字符串长度
+        // 上面的理解应该不是很确切，这个算法应该是按字符长度递归。以每一个字符为中心，按长度从小到递归
+        // 最外层这个循环的是字符串长度-1
         for (int l = 0; l < n; ++l) {
             // 先计算从字符串开始到当前字符串内的字符串是否是回文子。
             for (int i = 0; i + l < n; ++i) {

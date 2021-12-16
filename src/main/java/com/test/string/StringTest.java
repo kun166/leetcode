@@ -157,6 +157,7 @@ public class StringTest {
         String str = "timestamp";
         log.info(str.toUpperCase());
         log.info(str.toLowerCase());
+        System.out.println("800000021219202130020455011".length());
     }
 
 
