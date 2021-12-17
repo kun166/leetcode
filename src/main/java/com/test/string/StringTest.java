@@ -154,10 +154,9 @@ public class StringTest {
 
     @Test
     public void test8() {
-        String str = "timestamp";
+        String str = "Order_Facade_Platform_lock";
         log.info(str.toUpperCase());
         log.info(str.toLowerCase());
-        System.out.println("800000021219202130020455011".length());
     }
 
 
