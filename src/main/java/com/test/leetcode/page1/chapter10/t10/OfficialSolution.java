@@ -13,8 +13,8 @@ public class OfficialSolution {
     @Test
     public void test() {
         // 下面这两种情况，一个是false，一个是true，没看懂官方的意图
-        System.out.println(isMatch("aab", "c*a**b"));
-        System.out.println(isMatch("aab", "aab**"));
+        // System.out.println(isMatch("aab", "c*a**b"));
+        //System.out.println(isMatch("aab", "aab**"));
         // f[i][j-1]
     }
 

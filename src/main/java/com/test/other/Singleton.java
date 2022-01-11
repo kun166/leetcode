@@ -1,16 +1,28 @@
 package com.test.other;
 
-public class Singleton {
-    private static Singleton instance = null;
+import org.junit.Test;
 
-    private Singleton() {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Singleton {
+
+    @Test
+    public void test() {
+        List<String> policyIdList = new ArrayList<>();
+        policyIdList.add("a");
+        policyIdList.add("b");
+        System.out.println(joinPolicyId(policyIdList));
     }
 
-    public static synchronized Singleton getInstance() {
-        if (instance == null)
-            instance = new Singleton();
-
-        return instance;
+    private String joinPolicyId(List<String> policyIdList) {
+        if(policyIdList == null || policyIdList.size() == 0) {
+            return "";
+        }
+        if(policyIdList.size() <= 100) {
+            return String.join(",", policyIdList);
+        }
+        return String.join(",", policyIdList.subList(0, 100)) + "...";
     }
 }
 

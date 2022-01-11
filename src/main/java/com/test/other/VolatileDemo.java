@@ -1,10 +1,9 @@
 package com.test.other;
 
-import org.junit.Test;
-import sun.misc.Contended;
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 
 /**
  * @ClassName: TestFlash
@@ -16,20 +15,75 @@ import java.util.regex.Pattern;
 //使用了volatile
 public class VolatileDemo {
 
-    public static volatile boolean stop = false;//任务是否停止，volatile变量
+    public static void main(String[] args) {
+        getKey();
+        getKeyByPass();
+    }
 
-    public static void main(String[] args) throws Exception {
+    /**
+     * 随机生成秘钥
+     */
+    public static void getKey() {
+        try {
+            KeyGenerator kg = KeyGenerator.getInstance("AES");
+            kg.init(128);
+            //要生成多少位，只需要修改这里即可128, 192或256
+            SecretKey sk = kg.generateKey();
+            byte[] b = sk.getEncoded();
+            String s = byteToHexString(b);
+            System.out.println(s);
+            System.out.println("十六进制密钥长度为" + s.length());
+            System.out.println("二进制密钥的长度为" + s.length() * 4);
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            System.out.println("没有此算法。");
+        }
+    }
 
-        Thread threadl = new Thread(() -> {
-            while (!stop) { //stop=fa1se，不满足停止茶件，继续执行
-                //do someting
+    /**
+     * 使用指定的字符串生成秘钥
+     */
+    public static void getKeyByPass() {
+        //生成秘钥
+        String password = "DJDXB";
+        try {
+            KeyGenerator kg = KeyGenerator.getInstance("AES");
+            // kg.init(128);//要生成多少位，只需要修改这里即可128, 192或256
+            //SecureRandom是生成安全随机数序列，password.getBytes()是种子，只要种子相同，序列就一样，所以生成的秘钥就一样。
+            kg.init(128, new SecureRandom(password.getBytes()));
+            SecretKey sk = kg.generateKey();
+            byte[] b = sk.getEncoded();
+            String s = byteToHexString(b);
+            System.out.println(s);
+            System.out.println("十六进制密钥长度为" + s.length());
+            System.out.println("二进制密钥的长度为" + s.length() * 4);
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            System.out.println("没有此算法。");
+        }
+    }
+
+    /**
+     * byte数组转化为16进制字符串
+     *
+     * @param bytes
+     * @return
+     */
+    public static String byteToHexString(byte[] bytes) {
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < bytes.length; i++) {
+            String strHex = Integer.toHexString(bytes[i]);
+            if (strHex.length() > 3) {
+                sb.append(strHex.substring(6));
+            } else {
+                if (strHex.length() < 2) {
+                    sb.append("0" + strHex);
+                } else {
+                    sb.append(strHex);
+                }
             }
-            System.out.println("stop=true，满足停止条件。" + "停止时间：" + System.currentTimeMillis());
-        });
-        threadl.start();
-        Thread.sleep(100);//保证主线程修改stop=true，在子线程动后执行。
-        stop = true; //true
-        System.out.println("主线程设置停止标识 stop = true。" + "设置时间：" + System.currentTimeMillis());
+        }
+        return sb.toString();
     }
 }
 
