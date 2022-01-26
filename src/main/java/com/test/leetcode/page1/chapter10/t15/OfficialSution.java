@@ -53,6 +53,7 @@ public class OfficialSution {
             for (int second = first + 1; second < n; ++second) {
                 // 需要和上一次枚举的数不相同
                 // 这个和第一层循环时候一样，需要去重
+                // 从second = first+1，且如果second = first+1不去重，且只有三个数，这点多微妙啊
                 if (second > first + 1 && nums[second] == nums[second - 1]) {
                     continue;
                 }

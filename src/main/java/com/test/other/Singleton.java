@@ -9,6 +9,12 @@ public class Singleton {
 
     @Test
     public void test() {
+        SecurityManager manager = System.getSecurityManager();
+        if(manager != null) {
+            //manager.checkPermission();
+        }
+        System.out.println(manager);
+        System.out.println(System.getProperty("java.security.manager"));
         List<String> policyIdList = new ArrayList<>();
         policyIdList.add("a");
         policyIdList.add("b");

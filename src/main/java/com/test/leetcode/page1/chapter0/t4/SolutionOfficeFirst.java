@@ -12,13 +12,14 @@ public class SolutionOfficeFirst {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int length1 = nums1.length, length2 = nums2.length;
         int totalLength = length1 + length2;
-        if (totalLength % 2 == 1) {
+        if(totalLength % 2 == 1) {
             int midIndex = totalLength / 2;
             double median = getKthElement(nums1, nums2, midIndex + 1);
             return median;
         } else {
             int midIndex1 = totalLength / 2 - 1, midIndex2 = totalLength / 2;
-            double median = (getKthElement(nums1, nums2, midIndex1 + 1) + getKthElement(nums1, nums2, midIndex2 + 1)) / 2.0;
+            double median =
+                    (getKthElement(nums1, nums2, midIndex1 + 1) + getKthElement(nums1, nums2, midIndex2 + 1)) / 2.0;
             return median;
         }
     }
@@ -51,29 +52,30 @@ public class SolutionOfficeFirst {
         // nums2的起始位置
         int index2 = 0;
 
-        while (true) {
-            // 边界情况
-            if (index1 == length1) {
+        while(true) {
+            // 边界情况。注意length1有可能为0。所以放前面了
+            if(index1 == length1) {
                 // 说明nums1已经结束了
                 return nums2[index2 + k - 1];
             }
-            if (index2 == length2) {
-                // 说明nums2已经结束了
+            if(index2 == length2) {
+                // 说明nums2已经结束了。注意length1有可能为0，所以放前面了
                 return nums1[index1 + k - 1];
             }
-            if (k == 1) {
+            if(k == 1) {
                 // 特殊情况，k==1
                 return Math.min(nums1[index1], nums2[index2]);
             }
 
             // 正常情况,取k的一半
             int half = k / 2;
-            // k/2-1和 length之中取小的
+            // 在其实位置上加k/2，与lenght1比较，取小，注意这个-1很巧妙
             int newIndex1 = Math.min(index1 + half, length1) - 1;
             int newIndex2 = Math.min(index2 + half, length2) - 1;
             int pivot1 = nums1[newIndex1], pivot2 = nums2[newIndex2];
-            if (pivot1 <= pivot2) {
+            if(pivot1 <= pivot2) {
                 k -= (newIndex1 - index1 + 1);
+                // 这里又把1加回来了
                 index1 = newIndex1 + 1;
             } else {
                 k -= (newIndex2 - index2 + 1);

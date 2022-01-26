@@ -6,6 +6,8 @@ import org.junit.Test;
 import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
 import java.net.URLDecoder;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 
 /**
@@ -71,6 +73,12 @@ public class StringTest {
     public void test3() throws UnsupportedEncodingException {
         BigDecimal bd = new BigDecimal("12.56");
         System.out.println(bd.toString());
+        System.out.println("secretId".toUpperCase());
+
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        System.out.println(LocalDate.parse("2022-01-01", df));
+        System.out.println(URLDecoder.decode("2022-01-07%2000%3A00%3A00", "utf-8"));
+        System.out.println(URLDecoder.decode("2022-01-07%2023%3A59%3A59", "utf-8"));
     }
 
 
@@ -88,5 +96,7 @@ public class StringTest {
         String fileName = "aaa.xls";
         System.out.println(fileName.substring(0, fileName.lastIndexOf(".")));
         System.out.println(fileName.substring(fileName.lastIndexOf(".")));
+        Thread.currentThread()
+                .getContextClassLoader();
     }
 }
