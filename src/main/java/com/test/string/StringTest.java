@@ -1,5 +1,6 @@
 package com.test.string;
 
+import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
@@ -8,7 +9,10 @@ import java.math.BigDecimal;
 import java.net.URLDecoder;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 /**
  * @program: study
@@ -43,11 +47,11 @@ public class StringTest {
         String s = "update_id";
         StringBuilder sb = new StringBuilder();
         char[] array = s.toCharArray();
-        for(int i = 0; i < array.length; i++) {
-            if(array[i] == '_') {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == '_') {
                 continue;
             }
-            if(i > 0 && array[i - 1] == '_') {
+            if (i > 0 && array[i - 1] == '_') {
                 sb.append(Character.toUpperCase(array[i]));
             } else {
                 sb.append(array[i]);
@@ -61,8 +65,8 @@ public class StringTest {
     public void test2() {
         String s = "";
         StringBuilder sb = new StringBuilder();
-        for(char c : s.toCharArray()) {
-            if(c != ' ') {
+        for (char c : s.toCharArray()) {
+            if (c != ' ') {
                 sb.append(c);
             }
         }
@@ -93,10 +97,28 @@ public class StringTest {
 
     @Test
     public void test8() {
-        String fileName = "aaa.xls";
-        System.out.println(fileName.substring(0, fileName.lastIndexOf(".")));
-        System.out.println(fileName.substring(fileName.lastIndexOf(".")));
-        Thread.currentThread()
-                .getContextClassLoader();
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        System.out.println(JSON.toJSONString(list.stream().filter(t -> t == 1).collect(Collectors.toList())));
+
+        double rate = 0.03 / 100;
+        double result = 1;
+        for (int i = 0; i < 1500; i++) {
+            result *= (1 - rate);
+        }
+        System.out.println(1 - result);
+    }
+
+    @Test
+    public void test9() {
+        int i;
+        for (i = 0; i < 100; i++) {
+            if (i == 2) {
+                break;
+            }
+        }
+        System.out.println(i);
     }
 }
