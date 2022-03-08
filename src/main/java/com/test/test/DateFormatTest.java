@@ -19,7 +19,7 @@ public class DateFormatTest {
     @Test
     public void test() throws ParseException {
         Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.DAY_OF_YEAR, -90);
+        calendar.add(Calendar.DAY_OF_YEAR, -30);
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         System.out.println(df.format(calendar.getTime()));
         System.out.println(df.format(new Date()));

@@ -2,6 +2,7 @@ package com.test.string;
 
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import java.io.UnsupportedEncodingException;
@@ -120,5 +121,25 @@ public class StringTest {
             }
         }
         System.out.println(i);
+    }
+
+    @Test
+    public void test10() {
+        System.out.println(hideIdCardNo("1234567890"));
+    }
+
+    private String hideIdCardNo(String idCardNo) {
+        if (StringUtils.isBlank(idCardNo)) {
+            return null;
+        }
+        if (idCardNo.length() <= 8) {
+            return idCardNo;
+        }
+        StringBuilder builder = new StringBuilder(idCardNo.substring(0, 6));
+        for (int i = 6; i < idCardNo.length() - 2; i++) {
+            builder.append("*");
+        }
+        builder.append(idCardNo.substring(idCardNo.length() - 2));
+        return builder.toString();
     }
 }

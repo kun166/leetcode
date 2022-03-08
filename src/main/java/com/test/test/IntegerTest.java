@@ -115,5 +115,35 @@ public class IntegerTest {
         System.out.println(26 * 26 + 25);
     }
 
+    @Test
+    public void test11() {
+        double d = 0.2;
+        double result = 1;
+        for (int i = 0; i < 5; i++) {
+            result *= 0.8;
+        }
+        System.out.println(1 - result);
+    }
+
+    @Test
+    public void test12() {
+        double d = 0.1 / 100;
+        double result = 1;
+        for (int i = 0; i < 10; i++) {
+            result *= (1 - d);
+        }
+        System.out.println(1 - result);
+    }
+
+    @Test
+    public void test13() {
+        double d = 5d / 100d;
+        double result = 1;
+        for (int i = 0; i < 100; i++) {
+            result *= (1 - d);
+        }
+        System.out.println(1 - result);
+    }
+
 
 }
