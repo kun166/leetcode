@@ -3,6 +3,8 @@ package com.test.test;
 import com.alibaba.fastjson.JSON;
 import org.junit.Test;
 
+import java.math.BigDecimal;
+
 /**
  * @program: leetcode
  * @description:
@@ -13,14 +15,9 @@ public class IntegerTest {
 
     @Test
     public void test() {
-        int number = 1000;
-        StringBuilder sb = new StringBuilder();
-        while (number > 0) {
-            sb.append((char) (number % 2 + '0'));
-            number /= 2;
-        }
-        System.out.println(sb.reverse().toString());
-        System.out.println(Integer.toBinaryString(1000));
+        BigDecimal bigDecimal = new BigDecimal(1100000L);
+        System.out.println(bigDecimal.divide(new BigDecimal("100")));
+
     }
 
     @Test
@@ -137,12 +134,7 @@ public class IntegerTest {
 
     @Test
     public void test13() {
-        double d = 5d / 100d;
-        double result = 1;
-        for (int i = 0; i < 100; i++) {
-            result *= (1 - d);
-        }
-        System.out.println(1 - result);
+        System.out.println((int) ('1' - '0'));
     }
 
 

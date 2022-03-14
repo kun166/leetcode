@@ -13,6 +13,7 @@ import java.util.Map;
  */
 public class Solution {
     public boolean isValidSudoku(char[][] board) {
+        // list存放的二维坐标
         Map<Character, List<int[]>> map = new HashMap<>();
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
