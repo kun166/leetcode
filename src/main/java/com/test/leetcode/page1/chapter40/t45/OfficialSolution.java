@@ -12,7 +12,7 @@ public class OfficialSolution {
 
     @Test
     public void test() {
-        System.out.println(jump(new int[]{0}));
+        System.out.println(jump(new int[]{2, 3, 1, 2, 4, 2, 3}));
     }
 
     public int jump(int[] nums) {
@@ -24,7 +24,8 @@ public class OfficialSolution {
             // i+nums[i] 是这个i点可以跨越的最长的距离
             maxPosition = Math.max(maxPosition, i + nums[i]);
             if (i == end) {
-                // 如果是跳点的时候，就更新
+                // 不太好理解啊，这个地方
+                //  如果当前节点已经到了它能跨越的最大距离点，就更新下一个最大跳跃点
                 end = maxPosition;
                 steps++;
             }
