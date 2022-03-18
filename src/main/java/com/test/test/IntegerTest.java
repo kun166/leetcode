@@ -134,7 +134,11 @@ public class IntegerTest {
 
     @Test
     public void test13() {
-        System.out.println((int) ('1' - '0'));
+        int i = 0;
+        i = i | 1 | 2 | 3 | 4 | 5 | 6;
+        i = ~i;
+
+        System.out.println(i | 1 | 1);
     }
 
 
