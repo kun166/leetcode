@@ -35,7 +35,8 @@ public class Solution2020102802 {
         if (nums.length == 0) {
             return result;
         }
-        permute(result, nums, nums.length - 1);
+        //permute(result, nums, nums.length - 1);
+        permuteTwo(result, nums, 0);
         return result;
     }
 
@@ -47,6 +48,19 @@ public class Solution2020102802 {
         for (int i = index; i < nums.length; i++) {
             swap(nums, index, i);
             permute(result, nums, index - 1);
+            swap(nums, i, index);
+        }
+
+    }
+
+    public void permuteTwo(List<List<Integer>> result, int[] nums, int index) {
+        if (index == nums.length) {
+            result.add(convert(nums));
+            return;
+        }
+        for (int i = 0; i <= index; i++) {
+            swap(nums, index, i);
+            permuteTwo(result, nums, index + 1);
             swap(nums, i, index);
         }
 
