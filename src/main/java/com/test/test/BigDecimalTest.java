@@ -19,7 +19,12 @@ public class BigDecimalTest {
     }
 
     @Test
-    public void test1(){
+    public void test1() {
         System.out.println(Integer.toBinaryString(2));
+    }
+
+    @Test
+    public void test2() {
+        System.out.println(new BigDecimal("0.02551").multiply(new BigDecimal("100")).setScale(2, BigDecimal.ROUND_UP) + "%");
     }
 }

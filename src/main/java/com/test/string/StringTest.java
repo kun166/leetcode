@@ -125,7 +125,8 @@ public class StringTest {
 
     @Test
     public void test10() {
-        System.out.println(hideIdCardNo("1234567890"));
+        String idCard = "1234567890";
+        System.out.println(idCard.substring(idCard.length()-4));
     }
 
     private String hideIdCardNo(String idCardNo) {
