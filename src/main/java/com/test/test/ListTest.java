@@ -3,10 +3,7 @@ package com.test.test;
 import com.alibaba.fastjson.JSON;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -53,5 +50,15 @@ public class ListTest {
 
         System.out.println(ss.replaceAll("\\\\", ""));
 
+    }
+
+    @Test
+    public void sort() {
+        List<IntegerObject> list = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            list.add(new IntegerObject(i));
+        }
+        list.sort(Comparator.comparing(IntegerObject::getData).reversed());
+        System.out.println(JSON.toJSONString(list));
     }
 }
