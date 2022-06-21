@@ -15,10 +15,15 @@ public class SolutionSecond {
 
     @Test
     public void test() {
-        System.out.println(getLongestStrTwo("abcabcbb"));
+        System.out.println(getLongestStr("abc"));
     }
 
-
+    /**
+     * 这解法是错误的，"abc"输出0，显然是有问题的
+     *
+     * @param s
+     * @return
+     */
     public int getLongestStr(String s) {
         int length = s.length();
         int left = 0;
@@ -42,6 +47,12 @@ public class SolutionSecond {
         return max;
     }
 
+    /**
+     * 这解法和官方的解法类似，算是一个变种
+     *
+     * @param s
+     * @return
+     */
     public int getLongestStrTwo(String s) {
         int length = s.length();
         int left = 0;
@@ -53,6 +64,7 @@ public class SolutionSecond {
                 left++;
             }
             set.remove(s.charAt(i));
+            // 下面这一步，在移动i的过程中，都会计算一次，感觉浪费时间
             max = max > left - i ? max : left - i;
         }
         return max;
