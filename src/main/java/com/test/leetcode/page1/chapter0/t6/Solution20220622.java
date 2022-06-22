@@ -32,7 +32,7 @@ public class Solution20220622 {
             } else {
                 builders[row--].append(s.charAt(i));
             }
-            if (i == 0 || i == numRows - 1) {
+            if (row == 0 || row == numRows - 1) {
                 forward = !forward;
             }
         }
