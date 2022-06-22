@@ -18,6 +18,7 @@ public class SolutionOfficeFirst {
             return median;
         } else {
             int midIndex1 = totalLength / 2 - 1, midIndex2 = totalLength / 2;
+            // 这里面还隐含了一个Java的知识点，int和double的计算，会隐式转成double
             double median =
                     (getKthElement(nums1, nums2, midIndex1 + 1) + getKthElement(nums1, nums2, midIndex2 + 1)) / 2.0;
             return median;

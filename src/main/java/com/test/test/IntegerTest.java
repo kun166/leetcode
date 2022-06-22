@@ -141,5 +141,11 @@ public class IntegerTest {
         System.out.println(i | 1 | 1);
     }
 
+    @Test
+    public void test14() {
+        System.out.println(13 / 2d);
+        System.out.println(13 + 0.2d);
+    }
+
 
 }
