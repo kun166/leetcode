@@ -50,7 +50,7 @@ public class Solution20220621 {
 //        if (length == 2) {
 //            return nums1[n1Index] > nums2[n2Index] ? nums1[n1Index] : nums2[n2Index];
 //        }
-        int midLength = (length / 2 - 1) == 0 ? 1 : (length / 2 - 1);
+        int midLength = length / 2;
         midLength = Math.min(midLength, nums1.length - n1Index);
         midLength = Math.min(midLength, nums2.length - n2Index);
         if (nums1[n1Index + midLength - 1] > nums2[n2Index + midLength - 1]) {
