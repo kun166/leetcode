@@ -16,6 +16,7 @@ public class OfficialSolution {
         // System.out.println(isMatch("aab", "c*a**b"));
         //System.out.println(isMatch("aab", "aab**"));
         // f[i][j-1]
+        System.out.println(isMatch("a", "c*a"));
     }
 
     public boolean isMatch(String s, String p) {
@@ -26,7 +27,7 @@ public class OfficialSolution {
         f[0][0] = true;
         for (int i = 0; i <= m; ++i) {
             for (int j = 1; j <= n; ++j) {
-                if (j > 1 && p.charAt(j - 1) == '*') {
+                if (p.charAt(j - 1) == '*') {
                     f[i][j] = f[i][j - 2];
                     if (matches(s, p, i, j - 1)) {
                         f[i][j] = f[i][j] || f[i - 1][j];
