@@ -31,5 +31,8 @@ public class JSONTest {
             list.add(map);
         }
         System.out.println(JSON.toJSONString(list));
+
+
+        System.out.println(JSON.toJSONString(null));
     }
 }
