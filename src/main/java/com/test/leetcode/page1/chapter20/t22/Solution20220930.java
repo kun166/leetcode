@@ -33,17 +33,13 @@ public class Solution20220930 {
         }
         if (index < n) {
             stringBuilder.append('(');
-            System.out.println(stringBuilder);
             generateParenthesis(n, ant, stringBuilder, index + 1);
-            System.out.println(stringBuilder);
             stringBuilder.deleteCharAt(stringBuilder.length() - 1);
 
         }
         if (stringBuilder.length() < 2 * index) {
             stringBuilder.append(')');
-            System.out.println(stringBuilder);
             generateParenthesis(n, ant, stringBuilder, index);
-            System.out.println(stringBuilder);
             stringBuilder.deleteCharAt(stringBuilder.length() - 1);
         }
     }

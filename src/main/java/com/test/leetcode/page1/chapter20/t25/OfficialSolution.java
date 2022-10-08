@@ -1,5 +1,7 @@
 package com.test.leetcode.page1.chapter20.t25;
 
+import com.test.leetcode.ListNode;
+
 /**
  * @program: study
  * @description:
@@ -7,7 +9,7 @@ package com.test.leetcode.page1.chapter20.t25;
  * @create: 2020-09-17 15:26
  */
 public class OfficialSolution {
-    
+
     public ListNode reverseKGroup(ListNode head, int k) {
         ListNode hair = new ListNode(0);
         hair.next = head;
@@ -46,14 +48,5 @@ public class OfficialSolution {
             p = nex;
         }
         return new ListNode[]{tail, head};
-    }
-
-    private static class ListNode {
-        private int value;
-        private ListNode next;
-
-        ListNode(int value) {
-            this.value = value;
-        }
     }
 }
