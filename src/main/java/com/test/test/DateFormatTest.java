@@ -19,10 +19,14 @@ public class DateFormatTest {
     @Test
     public void test() throws ParseException {
         Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.DAY_OF_YEAR, -30);
-        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-        System.out.println(df.format(calendar.getTime()));
-        System.out.println(df.format(new Date()));
+        calendar.add(Calendar.DAY_OF_YEAR, 1);
+//        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+//        System.out.println(df.format(calendar.getTime()));
+//        System.out.println(df.format(new Date()));
+        System.out.println(calendar.getTime().getTime() - System.currentTimeMillis());
+        System.out.println(24 * 3600L * 1000);
+        String[] array = "/convenientloan_scf_home/credit_success_day".split("/");
+        System.out.println(array[2]);
     }
 
     @Test
@@ -39,10 +43,13 @@ public class DateFormatTest {
 
     @Test
     public void test2() {
-        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.HOUR_OF_DAY, 0);
-        calendar.add(Calendar.DAY_OF_YEAR, 10);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+        calendar.add(Calendar.DAY_OF_YEAR, -1);
         System.out.println(df.format(calendar.getTime()));
     }
 }

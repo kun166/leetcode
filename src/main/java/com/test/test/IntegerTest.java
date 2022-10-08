@@ -147,5 +147,11 @@ public class IntegerTest {
         System.out.println(13 + 0.2d);
     }
 
+    @Test
+    public void test15() {
+        System.out.println(123456789 * 123456789);
+        System.out.println(123456789l * 123456789 + 1);
+    }
+
 
 }

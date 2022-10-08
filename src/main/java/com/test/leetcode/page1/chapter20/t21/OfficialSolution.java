@@ -30,6 +30,13 @@ public class OfficialSolution {
     }
 
 
+    /**
+     * 看这牛逼PLUS的解题思路，递归居然能返回参数
+     *
+     * @param l1
+     * @param l2
+     * @return
+     */
     public ListNode recursionMergeTwoLists(ListNode l1, ListNode l2) {
         if (l1 == null) {
             return l2;

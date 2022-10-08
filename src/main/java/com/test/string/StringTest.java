@@ -8,11 +8,11 @@ import org.junit.Test;
 import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
 import java.net.URLDecoder;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -34,13 +34,8 @@ public class StringTest {
 
     @Test
     public void test() {
-        //System.out.println("YEARTOTALPREM".toUpperCase());
-        String column = "tsr";
-        column = column.toLowerCase();
-        column = Character.toUpperCase(column.charAt(0)) + column.substring(1);
-        System.out.println("bnf" + column);
-        System.out.println(column.toLowerCase());
-        //System.out.println("TBL_LCCONT".replaceAll("_", ".").toLowerCase());
+        System.out.println("cancelLoan".toUpperCase());
+        System.out.println("SETTLED".toLowerCase());
     }
 
     @Test
@@ -89,7 +84,7 @@ public class StringTest {
 
     @Test
     public void test4() {
-        System.out.println("123".substring(0,0));
+        System.out.println("123".substring(0, 0));
     }
 
 
@@ -123,7 +118,7 @@ public class StringTest {
     @Test
     public void test10() {
         String idCard = "1234567890";
-        System.out.println(idCard.substring(idCard.length()-4));
+        System.out.println(idCard.substring(idCard.length() - 4));
     }
 
     private String hideIdCardNo(String idCardNo) {
@@ -139,5 +134,27 @@ public class StringTest {
         }
         builder.append(idCardNo.substring(idCardNo.length() - 2));
         return builder.toString();
+    }
+
+    @Test
+    public void test11() {
+        // 2、跑结清的
+//        Calendar calendar = Calendar.getInstance();
+//        calendar.set(Calendar.MONTH, 0);
+//        calendar.set(Calendar.DAY_OF_YEAR, 1);
+//        calendar.add(Calendar.DAY_OF_YEAR, -1);
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        //System.out.println(df.format(calendar.getTime()));
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+        Date endTime = calendar.getTime();
+        calendar.add(Calendar.DAY_OF_YEAR, -1);
+        Date startTime = calendar.getTime();
+        System.out.println(df.format(endTime));
+        System.out.println(df.format(startTime));
     }
 }
