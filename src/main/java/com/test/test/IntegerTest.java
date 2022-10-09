@@ -153,5 +153,13 @@ public class IntegerTest {
         System.out.println(123456789l * 123456789 + 1);
     }
 
+    @Test
+    public void test16() {
+        for (int i = 0; i < 20; i++) {
+            System.out.println(i + ":" + (i & 1));
+        }
+        System.out.println(1 >> 1);
+    }
+
 
 }
