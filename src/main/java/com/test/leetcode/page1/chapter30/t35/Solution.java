@@ -27,12 +27,16 @@ public class Solution {
         // 2分查找法吧
         int start = 0, end = length - 1, m;
         while (start <= end) {
+            // 这个判断也很神啊
             if (nums[start] >= target)
                 return start;
             m = start + (end - start) / 2;
-            if (nums[m] == target) return m;
-            else if (nums[m] < target) start = m + 1;
-            else end = m;
+            if (nums[m] == target)
+                return m;
+            else if (nums[m] < target)
+                start = m + 1;
+            else
+                end = m;
         }
         return -1;
     }
