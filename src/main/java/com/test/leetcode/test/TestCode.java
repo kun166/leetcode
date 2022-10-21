@@ -1,5 +1,6 @@
 package com.test.leetcode.test;
 
+import com.alibaba.fastjson.JSON;
 import org.junit.Test;
 
 import java.util.Deque;
@@ -67,6 +68,11 @@ public class TestCode {
     public void textDeque() {
         Deque<Integer> deque = new LinkedList<>();
         deque.push(1);
-        deque.pop();
+        deque.push(2);
+        deque.push(3);
+        System.out.println(JSON.toJSONString(deque));
+        System.out.println(deque.pollLast());
+        System.out.println(deque.pollLast());
+        //System.out.println(deque.poll());
     }
 }
