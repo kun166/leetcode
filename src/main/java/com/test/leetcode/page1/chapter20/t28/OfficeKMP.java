@@ -12,6 +12,7 @@ public class OfficeKMP {
     /**
      * KMP算法，可以参考这篇文章
      * https://www.zhihu.com/question/21923021/answer/281346746
+     * 以下官方代码的实现，并没有用到pmt的next，不太一样
      *
      * @param haystack
      * @param needle
@@ -23,10 +24,11 @@ public class OfficeKMP {
             return 0;
         }
         int[] pi = new int[m];
-        // 下面这个循环，是速求needle的next数组
+        // 下面这个循环，是速求needle的pmt数组
+        // 为什么i从1开始？因为0的话，就是一个字符，匹配度为0。即pi[0]永远为0。且从0开始求的也不正确
         for (int i = 1, j = 0; i < m; i++) {
             while (j > 0 && needle.charAt(i) != needle.charAt(j)) {
-                // 说明不匹配。如果不匹配，就缩减一个字符再匹配
+                // 说明不匹配。如果不匹配，就从j的上一个位置的pmt开始匹配
                 j = pi[j - 1];
             }
             if (needle.charAt(i) == needle.charAt(j)) {
