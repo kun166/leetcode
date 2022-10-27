@@ -71,7 +71,7 @@ public class Office20221009 {
      */
     public boolean quickAdd(int y, int z, int x) {
         // x 和 y 是负数，z 是正数
-        // 需要判断 z * y >= x 是否成立。也即找到最大的那个z，使得|x*y|<=|y|
+        // 需要判断 z * y >= x 是否成立。也即找到最大的那个z，使得|x*z|<=|y|
         int result = 0, add = y;
         while (z != 0) {
             if ((z & 1) != 0) {
