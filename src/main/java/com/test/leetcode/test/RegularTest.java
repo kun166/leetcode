@@ -15,6 +15,6 @@ public class RegularTest {
     @Test
     public void test() {
         System.out.println(Pattern.matches("a*", "aa"));
-
+        System.out.println(4078318700270821848L%8);
     }
 }
