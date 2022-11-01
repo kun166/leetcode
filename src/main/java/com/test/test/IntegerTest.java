@@ -155,10 +155,7 @@ public class IntegerTest {
 
     @Test
     public void test16() {
-        for (int i = 0; i < 20; i++) {
-            System.out.println(i + ":" + (i & 1));
-        }
-        System.out.println(1 >> 1);
+        System.out.println(43694189847825L%8);
     }
 
 
