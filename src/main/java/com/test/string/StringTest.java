@@ -1,6 +1,7 @@
 package com.test.string;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
@@ -26,16 +27,15 @@ public class StringTest {
 
     @Test
     public void testIntern() {
-        String s = UUID.randomUUID()
-                .toString()
-                .replaceAll("-", "");
-        System.out.println(s + ":" + s.length());
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("aa",null);
+        System.out.println(jsonObject.toString());
     }
 
     @Test
     public void test() {
         System.out.println("cancelLoan".toUpperCase());
-        System.out.println("SETTLED".toLowerCase());
+        System.out.println("CONTRACT_PREVIEW_LIST".toLowerCase());
     }
 
     @Test
