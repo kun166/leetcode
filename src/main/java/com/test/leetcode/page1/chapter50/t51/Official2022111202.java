@@ -5,33 +5,17 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * @program: leetcode
- * @description:
- * @author: qinfajia
- * @create: 2020-11-03 19:44
+ * 这种方式没有看懂
  */
-public class OfficialSolution {
-
+public class Official2022111202 {
     public List<List<String>> solveNQueens(int n) {
-        // 申请n个长度的数组。存放每一行的皇后位置。queens[0]为第一行的皇后位置，依次类推
         int[] queens = new int[n];
-        // 数组默认值为-1
         Arrays.fill(queens, -1);
-        // 结果
         List<List<String>> solutions = new ArrayList<List<String>>();
         solve(solutions, queens, n, 0, 0, 0, 0);
         return solutions;
     }
 
-    /**
-     * @param solutions  结果集
-     * @param queens     数组
-     * @param n          方格行列数
-     * @param row        行号
-     * @param columns    列号
-     * @param diagonals1 对角线1
-     * @param diagonals2 对角线2
-     */
     public void solve(List<List<String>> solutions, int[] queens, int n, int row, int columns, int diagonals1, int diagonals2) {
         if (row == n) {
             List<String> board = generateBoard(queens, n);
