@@ -56,6 +56,7 @@ public class OfficeSolution {
         // 选择当前数
         if (target - candidates[idx] >= 0) {
             combine.add(candidates[idx]);
+            System.out.println(JSON.toJSONString(combine));
             // 这个又从当前数组下标开始，累加向前尝试
             dfs(candidates, target - candidates[idx], ans, combine, idx);
             combine.remove(combine.size() - 1);
