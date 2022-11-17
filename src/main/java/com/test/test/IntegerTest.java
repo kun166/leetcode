@@ -22,11 +22,13 @@ public class IntegerTest {
 
     @Test
     public void test1() {
-        int n = 1;
-        for (int i = 0; i < 5; i++) {
-            n <<= 1;
-            System.out.println(n);
+        int n = 5;
+        int[] array = new int[n];
+        array[1] = 1;
+        for (int i = 2; i < n; i++) {
+            array[i] = i * array[i - 1];
         }
+        System.out.println(JSON.toJSONString(array));
     }
 
     @Test
@@ -155,7 +157,7 @@ public class IntegerTest {
 
     @Test
     public void test16() {
-        System.out.println(65612933290256L%8);
+        System.out.println(65612933290256L % 8);
     }
 
 

@@ -59,14 +59,7 @@ public class StringTest {
 
     @Test
     public void test2() {
-        String s = "";
-        StringBuilder sb = new StringBuilder();
-        for (char c : s.toCharArray()) {
-            if (c != ' ') {
-                sb.append(c);
-            }
-        }
-        System.out.println(sb.toString());
+        System.out.println(UUID.randomUUID().toString().replaceAll("-",""));
     }
 
     @Test
