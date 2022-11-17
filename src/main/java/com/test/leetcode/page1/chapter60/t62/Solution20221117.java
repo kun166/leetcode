@@ -9,6 +9,13 @@ package com.test.leetcode.page1.chapter60.t62;
  */
 public class Solution20221117 {
 
+    /**
+     * 这应该是算是最简单的动态规划题目了
+     *
+     * @param m
+     * @param n
+     * @return
+     */
     public int uniquePaths(int m, int n) {
         if (m == 1 || n == 1) {
             return 1;
