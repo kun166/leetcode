@@ -28,13 +28,13 @@ public class StringTest {
     @Test
     public void testIntern() {
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("aa",null);
+        jsonObject.put("aa", null);
         System.out.println(jsonObject.toString());
     }
 
     @Test
     public void test() {
-        System.out.println("cancelLoan".toUpperCase());
+        System.out.println("popup_bean_name_list".toUpperCase());
         System.out.println("CONTRACT_PREVIEW_LIST".toLowerCase());
     }
 
@@ -59,7 +59,7 @@ public class StringTest {
 
     @Test
     public void test2() {
-        System.out.println(UUID.randomUUID().toString().replaceAll("-",""));
+        System.out.println(UUID.randomUUID().toString().replaceAll("-", ""));
     }
 
     @Test

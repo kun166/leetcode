@@ -27,4 +27,9 @@ public class BigDecimalTest {
     public void test2() {
         System.out.println(new BigDecimal("0.02551").multiply(new BigDecimal("100")).setScale(2, BigDecimal.ROUND_UP) + "%");
     }
+
+    @Test
+    public void test3(){
+        System.out.println(false||true);
+    }
 }
