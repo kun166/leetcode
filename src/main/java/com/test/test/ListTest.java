@@ -61,4 +61,20 @@ public class ListTest {
         list.sort(Comparator.comparing(IntegerObject::getData).reversed());
         System.out.println(JSON.toJSONString(list));
     }
+
+    @Test
+    public void remove() {
+        List<IntegerObject> list = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            list.add(new IntegerObject(i));
+        }
+        System.out.println("list:" + JSON.toJSONString(list));
+        List<IntegerObject> list1 = list.stream().filter(object -> object.getData() != 5).collect(Collectors.toList());
+        System.out.println("list1:" + JSON.toJSONString(list1));
+        System.out.println("list:" + JSON.toJSONString(list));
+
+        list.removeIf(object -> object.getData() != 5);
+        System.out.println("list:" + JSON.toJSONString(list));
+
+    }
 }
