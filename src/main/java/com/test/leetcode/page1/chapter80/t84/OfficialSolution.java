@@ -18,9 +18,11 @@ public class OfficialSolution {
         int[] right = new int[n];
 
         //单调栈(单调递增或者单调递减)
+        // 存放的是坐标
         Stack<Integer> mono_stack = new Stack<>();
         for (int i = 0; i < n; ++i) {
-            // 左侧
+            // 从左向右遍历。
+            // 单调递增
             while (!mono_stack.isEmpty() && heights[mono_stack.peek()] >= heights[i]) {
                 mono_stack.pop();
             }
