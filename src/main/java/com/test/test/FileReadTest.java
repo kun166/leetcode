@@ -83,7 +83,7 @@ public class FileReadTest {
                 write.write("\r\n");
                 write.flush();
                 count++;
-                if (count == 10000) {
+                if (count == 30000) {
                     count = 0;
                     fileCount++;
                 }
@@ -99,7 +99,7 @@ public class FileReadTest {
     @Test
     public void getCreditId() {
         Set<String> set = new HashSet<>();
-        try (BufferedReader reader = new BufferedReader(new FileReader("/Users/qinfajia/code/updateQuotaExpireService.log"));
+        try (BufferedReader reader = new BufferedReader(new FileReader("/Users/qinfajia/code/updateQuotaExpireService-1.txt"));
              BufferedWriter write = new BufferedWriter(new FileWriter("/Users/qinfajia/code/creditId.txt", true))) {
             String line;
             while ((line = reader.readLine()) != null) {

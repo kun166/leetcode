@@ -5,6 +5,8 @@ import org.junit.Test;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -51,5 +53,11 @@ public class DateFormatTest {
         calendar.set(Calendar.MILLISECOND, 0);
         calendar.add(Calendar.DAY_OF_YEAR, -1);
         System.out.println(df.format(calendar.getTime()));
+    }
+
+    @Test
+    public void test3() {
+        String pastTime = LocalDateTime.now().minusDays(1).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        System.out.println(pastTime);
     }
 }

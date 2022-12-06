@@ -157,7 +157,7 @@ public class IntegerTest {
 
     @Test
     public void test16() {
-        System.out.println(65612933290256L % 8);
+        System.out.println(32588971706631L % 8);
     }
 
 
