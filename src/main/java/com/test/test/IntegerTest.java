@@ -160,5 +160,10 @@ public class IntegerTest {
         System.out.println(32588971706631L % 8);
     }
 
+    @Test
+    public void test17() {
+        System.out.println(new BigDecimal(100022).divide(new BigDecimal(100)).stripTrailingZeros().toPlainString());
+    }
+
 
 }

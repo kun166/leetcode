@@ -99,7 +99,7 @@ public class FileReadTest {
     @Test
     public void getCreditId() {
         Set<String> set = new HashSet<>();
-        try (BufferedReader reader = new BufferedReader(new FileReader("/Users/qinfajia/code/updateQuotaExpireService-1.txt"));
+        try (BufferedReader reader = new BufferedReader(new FileReader("/Users/qinfajia/code/updateQuotaExpireService.log"));
              BufferedWriter write = new BufferedWriter(new FileWriter("/Users/qinfajia/code/creditId.txt", true))) {
             String line;
             while ((line = reader.readLine()) != null) {
@@ -133,5 +133,32 @@ public class FileReadTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Test
+    public void homeLog() {
+        Set<String> fail = new HashSet<>();
+        Set<String> success = new HashSet<>();
+        try (BufferedReader reader = new BufferedReader(new FileReader("/Users/qinfajia/code/session.log"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                if (line.indexOf("route request wbId") > -1) {
+                    // 提取出来wbId
+                    String wbId = line.split("route request wbId:")[1].split(",groupId:12")[0];
+                    if (line.indexOf("很抱歉，您的综合评分不足") > -1) {
+                        fail.add(wbId);
+                    } else {
+                        success.add(wbId);
+                    }
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        fail.removeAll(success);
+        System.out.println("fail:" + fail.size());
+        System.out.println(JSON.toJSONString(fail));
+        System.out.println("success:" + success.size());
+        System.out.println(JSON.toJSONString(success));
     }
 }
