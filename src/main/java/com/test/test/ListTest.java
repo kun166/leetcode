@@ -77,4 +77,22 @@ public class ListTest {
         System.out.println("list:" + JSON.toJSONString(list));
 
     }
+
+    @Test
+    public void test2() {
+        Queue<Integer> queue = new PriorityQueue(new Comparator<Integer>() {
+
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o1.compareTo(o2);
+            }
+        });
+        queue.add(12);
+        queue.add(7);
+        queue.add(10);
+        System.out.println(JSON.toJSONString(queue));
+        while (!queue.isEmpty()) {
+            System.out.println(queue.poll());
+        }
+    }
 }
