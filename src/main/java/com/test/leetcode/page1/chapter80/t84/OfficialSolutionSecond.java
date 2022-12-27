@@ -1,5 +1,7 @@
 package com.test.leetcode.page1.chapter80.t84;
 
+import org.junit.Test;
+
 import java.util.Arrays;
 import java.util.Stack;
 
@@ -11,6 +13,18 @@ import java.util.Stack;
  */
 public class OfficialSolutionSecond {
 
+    @Test
+    public void test(){
+        System.out.println(largestRectangleArea(new int[]{5, 5, 5, 5, 5, 5}));
+    }
+
+    /**
+     * 这种方式的left和right的值，对于数组{5, 5, 5, 5, 5, 5}，和上一种方式，是不一样的
+     * 虽然结果相同
+     *
+     * @param heights
+     * @return
+     */
     public int largestRectangleArea(int[] heights) {
         int n = heights.length;
         int[] left = new int[n];
