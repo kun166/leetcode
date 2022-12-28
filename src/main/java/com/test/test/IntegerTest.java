@@ -165,5 +165,11 @@ public class IntegerTest {
         System.out.println(new BigDecimal(100022).divide(new BigDecimal(100)).stripTrailingZeros().toPlainString());
     }
 
+    @Test
+    public void test18() {
+
+        System.out.println(Integer.parseInt("12".substring(2 - 2)));
+    }
+
 
 }

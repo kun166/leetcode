@@ -91,6 +91,7 @@ public class ListTest {
         queue.add(7);
         queue.add(10);
         System.out.println(JSON.toJSONString(queue));
+        System.out.println(queue.peek());
         while (!queue.isEmpty()) {
             System.out.println(queue.poll());
         }
