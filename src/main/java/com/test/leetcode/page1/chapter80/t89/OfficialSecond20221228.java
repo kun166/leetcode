@@ -1,9 +1,14 @@
 package com.test.leetcode.page1.chapter80.t89;
 
+import com.alibaba.fastjson.JSON;
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 格雷编码
+ *
  * @ClassName: OfficialSecond20221228
  * @Description:
  * @Author: qinfajia
@@ -11,6 +16,12 @@ import java.util.List;
  * @Version: 1.0
  */
 public class OfficialSecond20221228 {
+
+    @Test
+    public void test() {
+        List<Integer> list = grayCode(3);
+        System.out.println(JSON.toJSONString(list));
+    }
 
     /**
      * 二进制数转格雷码
