@@ -2,7 +2,9 @@ package com.test.list;
 
 import org.junit.Test;
 
+import java.util.Deque;
 import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * @program: study
@@ -20,5 +22,13 @@ public class LinkListTest {
         System.out.println(ll.removeFirst());
 
 
+    }
+
+    @Test
+    public void testQueue() {
+        Deque<Integer> deque = new LinkedList<>();
+        deque.offer(1);
+        deque.offer(2);
+        System.out.println(deque.poll());
     }
 }
