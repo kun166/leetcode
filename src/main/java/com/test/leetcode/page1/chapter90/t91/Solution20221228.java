@@ -18,6 +18,7 @@ public class Solution20221228 {
 
     /**
      * 这题类似于斐波那契函数啊
+     * 咱这解法是从后往前
      *
      * @param s
      * @return
