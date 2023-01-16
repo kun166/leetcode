@@ -26,9 +26,13 @@ public class Solution {
     }
 
     /**
+     * 如果该二叉树的左子树不为空，则左子树上所有节点的值均小于它的根节点的值；
+     * 若它的右子树不空，则右子树上所有节点的值均大于它的根节点的值；
+     * 它的左右子树也为二叉搜索树。
+     *
      * @param root  当前节点
-     * @param left  root节点归属于left的右子树
-     * @param right root节点归属于right的左子树
+     * @param left  当前节点的左侧界限。只有当前节点是父节点的右子树，才不为空。也即左子树有右边界，右子树有左边界。
+     * @param right 当前节点的右侧界限。只有当前节点是父节点的左子树，才不为空。也即左子树有右边界，右子树有左边界。
      * @return
      */
     public boolean isValidBST(TreeNode root, TreeNode left, TreeNode right) {
