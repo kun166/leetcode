@@ -11,9 +11,13 @@ import java.util.LinkedList;
  * @author: qinfajia
  * @create: 2021-05-19 16:15
  */
-public class SolutionSecond {
+public class OfficialSecond20230117 {
 
     /**
+     * 迭代
+     * <p>
+     * 这种方式有时间好好看看
+     *
      * @param preorder 前序遍历数组
      * @param inorder  中序遍历数组
      * @return
