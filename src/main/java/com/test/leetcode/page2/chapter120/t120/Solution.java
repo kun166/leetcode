@@ -14,6 +14,7 @@ public class Solution {
         int length = triangle.size();
         int[] array = new int[length];
         array[0] = triangle.get(0).get(0);
+        // 这一行代码多余，因为数组的默认值就是0
         for (int i = 1; i < length; i++) {
             array[i] = 0;
         }
@@ -31,6 +32,7 @@ public class Solution {
                 value = cValue;
             }
         }
+        // 这个设定想的很妙
         int result = array[0];
         for (int i = 1; i < length; i++) {
             result = Math.min(result, array[i]);
