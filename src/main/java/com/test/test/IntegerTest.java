@@ -23,4 +23,9 @@ public class IntegerTest {
     public void test1() {
         System.out.println(1 << 2);
     }
+
+    @Test
+    public void test2() {
+        System.out.println(63665318992148L%8);
+    }
 }
