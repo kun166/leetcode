@@ -20,6 +20,13 @@ public class Solution {
         System.out.println(JSON.toJSONString(list));
     }
 
+    /**
+     * 牛逼了，我以前居然写出过这么牛逼的代码。
+     * 这个解法又简单，又牛逼，是我写的么
+     *
+     * @param s
+     * @return
+     */
     public List<List<String>> partition(String s) {
         List<List<String>> result = new ArrayList<>();
         if (s == null || s.length() == 0) {

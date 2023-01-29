@@ -19,11 +19,14 @@ public class OfficialFirst20230129 {
 
     /**
      * 回溯 + 动态规划预处理
+     *
      * @param s
      * @return
      */
     public List<List<String>> partition(String s) {
+        // 给定的字符串长度
         n = s.length();
+        // 动态规划
         f = new boolean[n][n];
         for (int i = 0; i < n; ++i) {
             Arrays.fill(f[i], true);
