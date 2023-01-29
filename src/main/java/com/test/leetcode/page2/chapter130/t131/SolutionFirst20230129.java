@@ -1,30 +1,20 @@
 package com.test.leetcode.page2.chapter130.t131;
 
-import com.alibaba.fastjson.JSON;
-import org.junit.Test;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
- * @ClassName: OfficialFirst20230129
+ * @ClassName: SolutionFirst20230129
  * @Description:
  * @Author: qinfajia
- * @Date: 2023/1/29 08:51
+ * @Date: 2023/1/29 11:24
  * @Version: 1.0
  */
-public class OfficialFirst20230129 {
+public class SolutionFirst20230129 {
     boolean[][] f;
     List<List<String>> ret = new ArrayList<List<String>>();
     List<String> ans = new ArrayList<String>();
     int n;
-
-    @Test
-    public void test() {
-        List<List<String>> list = partition("aab");
-        System.out.println(JSON.toJSONString(list));
-    }
 
     /**
      * 回溯 + 动态规划预处理
@@ -37,17 +27,20 @@ public class OfficialFirst20230129 {
         n = s.length();
         // 动态规划。f[i][j]表示字符串中第i个下标到第j个下标的字符串，是否是回文串
         f = new boolean[n][n];
-        for (int i = 0; i < n; ++i) {
-            Arrays.fill(f[i], true);
-        }
 
-        // 从后往前遍历
-        for (int i = n - 1; i >= 0; --i) {
-            for (int j = i + 1; j < n; ++j) {
-                f[i][j] = (s.charAt(i) == s.charAt(j)) && f[i + 1][j - 1];
+        for (int i = n - 1; i >= 0; i--) {
+            for (int j = i; j < n; j++) {
+                if (i == j) {
+                    f[i][j] = true;
+                } else if (s.charAt(i) == s.charAt(j)) {
+                    if (j - i > 1) {
+                        f[i][j] = f[i + 1][j - 1];
+                    } else {
+                        f[i][j] = true;
+                    }
+                }
             }
         }
-
         dfs(s, 0);
         return ret;
     }
