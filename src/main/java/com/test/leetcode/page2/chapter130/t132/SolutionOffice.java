@@ -30,6 +30,8 @@ public class SolutionOffice {
                 f[i] = 0;
             } else {
                 for (int j = 0; j < i; ++j) {
+                    // 从前向后找回文串，把所有的回文串找到之后，取最小的那个。
+                    // 这就是dp的精要啊
                     if (g[j + 1][i]) {
                         f[i] = Math.min(f[i], f[j] + 1);
                     }

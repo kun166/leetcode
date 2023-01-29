@@ -2,6 +2,8 @@ package com.test.leetcode.page2.chapter130.t132;
 
 import org.junit.Test;
 
+import java.util.Arrays;
+
 /**
  * @ClassName: Solution20230129
  * @Description:
@@ -13,7 +15,7 @@ public class Solution20230129 {
 
     @Test
     public void test() {
-        System.out.println(minCut("aaabaa"));
+        System.out.println(minCut("aab"));
     }
 
     public int minCut(String s) {
@@ -32,39 +34,20 @@ public class Solution20230129 {
                 }
             }
         }
-        int lc = 0;
-        int start = 0, end = n - 1;
-        // 从左向右
-        while (start <= end) {
-            if (dp[start][end]) {
-                if (end == n - 1) {
-                    break;
-                } else {
-                    lc++;
-                    start = end + 1;
-                    end = n - 1;
-                }
+        // 又是一个dp
+        int[] c = new int[n];
+        Arrays.fill(c, Integer.MAX_VALUE);
+        for (int i = 0; i < n; i++) {
+            if (dp[0][i]) {
+                c[i] = 0;
             } else {
-                end--;
+                for (int j = 0; j < i; j++) {
+                    if (dp[j + 1][i]) {
+                        c[i] = Math.min(c[i], c[j] + 1);
+                    }
+                }
             }
         }
-        // 从右向左
-        int rc = 0;
-        start = 0;
-        end = n - 1;
-        while (start <= end) {
-            if (dp[start][end]) {
-                if (start == 0) {
-                    break;
-                } else {
-                    rc++;
-                    end = start - 1;
-                    start = 0;
-                }
-            } else {
-                start++;
-            }
-        }
-        return Math.min(lc, rc);
+        return c[n - 1];
     }
 }
