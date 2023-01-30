@@ -25,6 +25,7 @@ public class SolutionOffice {
         HashMap<Node, Node> visited = new HashMap();
 
         // 将题目给定的节点添加到队列
+        // 广度优先的精髓其实就是这个队列啊，一定一定要记住
         LinkedList<Node> queue = new LinkedList<>();
         queue.add(node);
         // 克隆第一个节点并存储到哈希表中
