@@ -13,8 +13,7 @@ public class Solution {
 
     /**
      * 这代码居然是我当年写出来的？现在写不出来了……
-     * <p>
-     * 感觉这方法，应该是不太可能性的，只能说碰巧通过了代码检测
+     * 这代码确实挺牛逼的，当年得想了多久才想出来啊
      */
     @Test
     public void test() {
@@ -78,25 +77,28 @@ public class Solution {
             // 越界的不处理
             if (forward) {
                 // 向右
-                // 向右发只计算评分比当前孩子高的
+                // 向右发糖只计算评分比当前孩子高的。即处于升序中的孩子。
+                // 处于升序中的孩子，一定比左边的那个孩子多一块糖
                 if (ratings[index] > ratings[index - 1]) {
-                    // 感觉这个还是有问题的，有可能当前坐标孩子糖果已经被计算过了
                     // array[index] = Math.max(array[index],array[index - 1] + 1); 更好一些
                     array[index] = array[index - 1] + 1;
                     index++;
                 } else {
+                    // 一旦找到非升序的那个孩子，就可以跳出循环了
                     break;
                 }
             } else {
                 // 向左
+                // 1,计算处于降序中的孩子。处于降序中的孩子，发糖果的数量一定比右边的孩子多一颗
+                // 2,处于降序中波峰的孩子，这个孩子既处于升序，又处于降序，需要取两把最大的那个值
                 if (ratings[index] > ratings[index + 1]) {
-                    // 同上，同样存在问题
                     array[index] = array[index + 1] + 1;
                     index--;
                 } else {
                     if (array[index + 1] != 1 && ratings[index] < ratings[index + 1]) {
                         array[index + 1] = Math.max(array[index] + 1, array[index + 1]);
                     }
+                    // 一旦找到波峰，就可以退出循环了。
                     break;
                 }
             }
