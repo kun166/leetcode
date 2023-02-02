@@ -8,7 +8,7 @@ import com.test.leetcode.ListNode;
  * @author: qinfajia
  * @create: 2021-07-27 11:15
  */
-public class SolutionOffice {
+public class Other20230202 {
 
     public ListNode detectCycle(ListNode head) {
         if (head == null) {
