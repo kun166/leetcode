@@ -25,23 +25,29 @@ public class Solution {
     }
 
     public void reorderList(ListNode head) {
+        // 先求链表的长度
         int length = 0;
         ListNode node = head;
         while (node != null) {
             length++;
             node = node.next;
         }
+        // 链表长度小于3，则不处理
         if (length < 3) {
             return;
         }
+        // 求一半的长度
         int mid = length / 2;
+        // 从头结点开始处理
         node = head;
         while (mid > 0) {
             node = node.next;
             mid--;
         }
+        // 找到中间节点的上一个节点？
         ListNode pre = node;
         ListNode current = node.next;
+        // 从该节点进行翻转？
         while (current != null) {
             ListNode next = current.next;
             current.next = pre;
