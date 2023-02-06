@@ -15,7 +15,7 @@ public class Solution20230203 {
 
     @Test
     public void test() {
-        ListNode head = new ListNode(4, new ListNode(2, new ListNode(1, new ListNode(3))));
+        ListNode head = new ListNode(-1, new ListNode(5, new ListNode(3, new ListNode(4, new ListNode(0)))));
         System.out.println(JSON.toJSONString(head));
         System.out.println(JSON.toJSONString(insertionSortList(head)));
 
@@ -32,11 +32,8 @@ public class Solution20230203 {
         ListNode dummy = new ListNode();
         dummy.next = head;
         ListNode pre = dummy;
-        while (pre != null) {
+        while (pre.next != null) {
             ListNode p = findMin(pre);
-            if (pre == p) {
-                break;
-            }
             // 把该节点从原来的链表中去掉
             ListNode min = p.next;
             p.next = min.next;
