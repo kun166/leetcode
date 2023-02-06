@@ -14,7 +14,7 @@ public class SolutionOffice {
         if (head == null) {
             return null;
         }
-
+        // 设置个虚节点
         ListNode dummyHead = new ListNode(0);
         dummyHead.next = head;
         // lastSorted 排好序的最后那个节点。curr当前遍历的节点
