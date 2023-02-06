@@ -1,6 +1,8 @@
 package com.test.leetcode.page2.chapter140.t147;
 
+import com.alibaba.fastjson.JSON;
 import com.test.leetcode.ListNode;
+import org.junit.Test;
 
 /**
  * @ClassName: Solution20230203
@@ -10,6 +12,14 @@ import com.test.leetcode.ListNode;
  * @Version: 1.0
  */
 public class Solution20230203 {
+
+    @Test
+    public void test() {
+        ListNode head = new ListNode(4, new ListNode(2, new ListNode(1, new ListNode(3))));
+        System.out.println(JSON.toJSONString(head));
+        System.out.println(JSON.toJSONString(insertionSortList(head)));
+
+    }
 
     /**
      * 插入排序
@@ -33,6 +43,9 @@ public class Solution20230203 {
             // 把min加入到已经排好序的链表中
             min.next = pre.next;
             pre.next = min;
+
+            // 继续下一次循环
+            pre = pre.next;
         }
         return dummy.next;
     }
