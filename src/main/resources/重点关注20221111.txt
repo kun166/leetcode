@@ -32,6 +32,7 @@ s=nb
 149,这题里面有速求最大公约数的算法，一定要学会。同样，求得了最大公约数，那最小公倍数就是a*b除以最大公约数了
 150,用数组模拟栈？
 151,趁着这个题，学习下Java正则表达式:https://www.runoob.com/java/java-regular-expressions.html
+152,这个题好好看看官方解答吧
 
 
 
