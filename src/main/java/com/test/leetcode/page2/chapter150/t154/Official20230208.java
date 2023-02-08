@@ -15,10 +15,13 @@ public class Official20230208 {
         while (low < high) {
             int pivot = low + (high - low) / 2;
             if (nums[pivot] < nums[high]) {
+                // 从pivot到high已经排好序了，最小值要么是nums[pivot],要么在low到pivot-1里
                 high = pivot;
             } else if (nums[pivot] > nums[high]) {
+                // pivot到high未排好序，则最小值，一定在未排好序的这一段里
                 low = pivot + 1;
             } else {
+                // 重复值,没法二分了，只能慢慢的—1了
                 high -= 1;
             }
         }
