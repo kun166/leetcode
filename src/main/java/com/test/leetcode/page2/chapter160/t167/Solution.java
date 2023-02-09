@@ -11,6 +11,13 @@ import java.util.Map;
  */
 public class Solution {
 
+    /**
+     * 呃，我曾经写出过这么牛逼的代码？我现在都没想到
+     *
+     * @param numbers
+     * @param target
+     * @return
+     */
     public int[] twoSum(int[] numbers, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < numbers.length; i++) {

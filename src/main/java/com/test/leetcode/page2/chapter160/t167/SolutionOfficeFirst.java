@@ -8,6 +8,13 @@ package com.test.leetcode.page2.chapter160.t167;
  */
 public class SolutionOfficeFirst {
 
+    /**
+     * 呃，这个算是二分查找么？
+     *
+     * @param numbers
+     * @param target
+     * @return
+     */
     public int[] twoSum(int[] numbers, int target) {
         for (int i = 0; i < numbers.length; ++i) {
             int low = i + 1, high = numbers.length - 1;
