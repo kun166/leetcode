@@ -22,6 +22,7 @@ public class IntegerTest {
     @Test
     public void test1() {
         System.out.println(1 << 2);
+        System.out.println(-25/26);
     }
 
     @Test
