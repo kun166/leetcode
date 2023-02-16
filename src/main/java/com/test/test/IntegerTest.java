@@ -22,11 +22,16 @@ public class IntegerTest {
     @Test
     public void test1() {
         System.out.println(1 << 2);
-        System.out.println(-25/26);
+        System.out.println(-25 / 26);
     }
 
     @Test
     public void test2() {
-        System.out.println(63665318992148L%8);
+        System.out.println(63665318992148L % 8);
+    }
+
+    @Test
+    public void test3() {
+        System.out.println(12&10);
     }
 }
