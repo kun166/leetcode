@@ -10,7 +10,7 @@ import java.util.Set;
  * @Date: 2023/2/19 16:51
  * @Version: 1.0
  */
-public class Solution20230219 {
+public class SolutionFirst20230219 {
 
     public boolean isHappy(int n) {
         Set<Integer> set = new HashSet<>();
