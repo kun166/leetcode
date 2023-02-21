@@ -11,6 +11,12 @@ import com.test.leetcode.ListNode;
  */
 public class OfficialFirst20230220 {
 
+    /**
+     * 迭代
+     *
+     * @param head
+     * @return
+     */
     public ListNode reverseList(ListNode head) {
         ListNode prev = null;
         ListNode curr = head;
