@@ -10,6 +10,7 @@ package com.test.leetcode.page3.chapter200.t209;
 public class Solution20230223 {
 
     public int minSubArrayLen(int target, int[] nums) {
+        // 其实这个count可以默认一个nums.length+1或者Integer.MAX_VALUE的
         int count = 0;
         int left = 0, right = 0;
         while (right < nums.length) {
