@@ -34,7 +34,7 @@ public class StringTest {
 
     @Test
     public void test() {
-        System.out.println("popup_bean_name_list".toUpperCase());
+        System.out.println("preLoan_Check_fail".toUpperCase());
         System.out.println("CONTRACT_PREVIEW_LIST".toLowerCase());
     }
 
