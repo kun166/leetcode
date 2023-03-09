@@ -1,4 +1,4 @@
-package com.test.leetcode.page3.chapter230.t244;
+package com.test.leetcode.page3.chapter230.t234;
 
 import com.test.leetcode.ListNode;
 import org.junit.Test;
