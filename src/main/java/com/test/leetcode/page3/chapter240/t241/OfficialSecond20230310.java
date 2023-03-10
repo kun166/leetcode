@@ -43,22 +43,30 @@ public class OfficialSecond20230310 {
                 ops.add(t);
             }
         }
+
+        //前面的就不说了
         List<Integer>[][] dp = new List[ops.size()][ops.size()];
         for (int i = 0; i < ops.size(); i++) {
             for (int j = 0; j < ops.size(); j++) {
                 dp[i][j] = new ArrayList<Integer>();
             }
         }
+        // 下面会把数分离出来
         for (int i = 0; i < ops.size(); i += 2) {
             dp[i][i].add(ops.get(i));
         }
-        for (int i = 3; i <= ops.size(); i++) {
-            for (int j = 0; j + i <= ops.size(); j += 2) {
+        for (int i = 2; i <= ops.size(); i++) {
+            // 这个第一层循环的i，是下面循环里的l和r的间距
+            for (int j = 0; j + i < ops.size(); j += 2) {
+                // j从第一个数字开始，每次步长2，跳到下一个数字
+                // 确定左侧边界和右侧边界
                 int l = j;
-                int r = j + i - 1;
+                int r = j + i;
                 for (int k = j + 1; k < r; k += 2) {
+                    // k是操作数
                     List<Integer> left = dp[l][k - 1];
                     List<Integer> right = dp[k + 1][r];
+                    // 笛卡尔积
                     for (int num1 : left) {
                         for (int num2 : right) {
                             if (ops.get(k) == ADDITION) {
