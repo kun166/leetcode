@@ -17,26 +17,23 @@ public class Solution20230310 {
     public List<String> binaryTreePaths(TreeNode root) {
         StringBuilder builder = new StringBuilder();
         List<String> list = new ArrayList<>();
-        builder.append(root.val);
-        binaryTreePaths(root.left, list, builder);
-        binaryTreePaths(root.right, list, builder);
+        binaryTreePaths(root, list, builder);
         return list;
     }
 
     public void binaryTreePaths(TreeNode root, List<String> list, StringBuilder builder) {
-        builder.append("->").append(root.val);
+        builder.append(root.val).append("->");
+        if (root.left == null && root.right == null) {
+            // 这个地方，如果是一个参数的话，是截取的参数之后的字符串……
+            list.add(builder.substring(0, builder.length() - 2));
+        }
         int length = builder.length();
         if (root.left != null) {
             binaryTreePaths(root.left, list, builder);
+            builder.delete(length, builder.length());
         }
         if (root.right != null) {
-            if (length < builder.length()) {
-                builder.delete(length, builder.length());
-            }
             binaryTreePaths(root.right, list, builder);
-        }
-        if (root.left == null && root.right == null) {
-            list.add(builder.toString());
         }
     }
 }
