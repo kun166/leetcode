@@ -30,17 +30,29 @@ public class Other20230314 {
         return res;
     }
 
+    /**
+     * 递归回溯
+     *
+     * @param res   返回值
+     * @param cur   char数组
+     * @param count 当前char下标吧
+     * @param n
+     */
     private void backTrack(List<String> res, char[] cur, int count, int n) {
+        // 如果n为5，则count为3
+        // 如果n为4,则count为2
         if (count > (n - 1) / 2) {
             res.add(new String(cur));
             return;
         }
         if (n % 2 == 1 && count == (n - 1) / 2) {
+            // 如果n为奇数，且中间这个元素，只能选0，1，8
             for (int i = 0; i < 3; i++) {
                 cur[count] = map[i][0];
                 backTrack(res, cur, count + 1, n);
             }
         } else {
+            // 避开第一个下标值为0，因为为0不符合要求
             int i = count == 0 ? 1 : 0;
             for (; i < map.length; i++) {
                 cur[count] = map[i][0];
