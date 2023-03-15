@@ -18,14 +18,14 @@ public class StringTest {
     @Test
     public void testIntern() {
         String str = "执行用时：\n" +
-                "4 ms\n" +
+                "1 ms\n" +
                 ", 在所有 Java 提交中击败了\n" +
                 "100.00%\n" +
                 "的用户\n" +
                 "内存消耗：\n" +
-                "51 MB\n" +
+                "41.8 MB\n" +
                 ", 在所有 Java 提交中击败了\n" +
-                "81.05%\n" +
+                "47.78%\n" +
                 "的用户";
         System.out.println(str.replaceAll("\n", ""));
     }

@@ -14,6 +14,13 @@ import java.util.Map;
  */
 public class Solution20230314 {
 
+    /**
+     * 执行用时：1 ms, 在所有 Java 提交中击败了100.00%的用户
+     * 内存消耗：41.8 MB, 在所有 Java 提交中击败了47.78%的用户
+     *
+     * @param strings
+     * @return
+     */
     public List<List<String>> groupStrings(String[] strings) {
         Map<String, List<String>> map = new HashMap<>();
         for (String str : strings) {
