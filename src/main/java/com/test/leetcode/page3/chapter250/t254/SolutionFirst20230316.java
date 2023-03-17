@@ -1,4 +1,4 @@
-package com.test.leetcode.page3.chapter250.t255;
+package com.test.leetcode.page3.chapter250.t254;
 
 import com.alibaba.fastjson.JSON;
 import org.junit.Test;
@@ -20,6 +20,12 @@ public class SolutionFirst20230316 {
         System.out.println(JSON.toJSONString(getFactors(32)));
     }
 
+    /**
+     * 唉，这种方式好像做不出来……
+     *
+     * @param n
+     * @return
+     */
     public List<List<Integer>> getFactors(int n) {
         List<List<Integer>> ans = new ArrayList<>();
         List<Integer> list = getFactorList(n);
@@ -39,6 +45,9 @@ public class SolutionFirst20230316 {
     }
 
     public void add(List<List<Integer>> ans, List<Integer> list, int index, int step) {
+        if (index > 0 && list.get(index - 1) == list.get(index + step - 1)) {
+            return;
+        }
         List<Integer> l = new ArrayList<>();
         for (int i = 0; i < index; i++) {
             l.add(list.get(i));

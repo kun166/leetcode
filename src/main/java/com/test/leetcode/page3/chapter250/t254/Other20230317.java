@@ -1,4 +1,4 @@
-package com.test.leetcode.page3.chapter250.t255;
+package com.test.leetcode.page3.chapter250.t254;
 
 import com.alibaba.fastjson.JSON;
 import org.junit.Test;
