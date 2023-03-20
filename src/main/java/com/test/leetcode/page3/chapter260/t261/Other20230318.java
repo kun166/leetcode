@@ -38,6 +38,7 @@ public class Other20230318 {
                 return false;
             } else {
                 //否则合并两个集合
+                // 这个方法里面又进行了一遍find，感觉应该可以省略掉
                 union(edges[j][0], edges[j][1], p);
             }
         }
