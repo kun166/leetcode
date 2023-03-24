@@ -34,8 +34,8 @@ public class StringTest {
 
     @Test
     public void test() {
-        System.out.println("wBCreditId".toUpperCase());
-        System.out.println("CONTRACT_PREVIEW_LIST".toLowerCase());
+        System.out.println("PUSH_JUDUODUO".toUpperCase());
+        System.out.println("PUSH_JUDUODUO".toLowerCase());
     }
 
 
