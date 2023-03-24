@@ -16,10 +16,13 @@ public class Other20230324 {
      * @return
      */
     public boolean canPermutePalindrome(String s) {
+        // 一个int是32位，足够存储26个字符
         int cs = 0;
+        // 相当于每一位是一个boolean值
         for (char c : s.toCharArray()) {
             cs ^= (1 << (c - 'a'));
         }
+        // 最后的cs至多包含一个1
         cs &= (cs - 1);
         return cs == 0;
     }
