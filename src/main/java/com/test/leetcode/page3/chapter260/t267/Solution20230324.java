@@ -22,6 +22,15 @@ public class Solution20230324 {
         System.out.println(JSON.toJSONString(generatePalindromes("a")));
     }
 
+
+    /**
+     * 执行用时：12 ms, 在所有 Java 提交中击败了60.87%的用户
+     * 内存消耗：49.3 MB, 在所有 Java 提交中击败了26.08%的用户
+     * 通过测试用例：26 / 26
+     *
+     * @param s
+     * @return
+     */
     public List<String> generatePalindromes(String s) {
         List<String> ans = new ArrayList<>();
         if (s.length() == 1) {
