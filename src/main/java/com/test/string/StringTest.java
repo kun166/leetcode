@@ -23,12 +23,12 @@ public class StringTest {
                 "100.00%\n" +
                 "的用户\n" +
                 "内存消耗：\n" +
-                "41.4 MB\n" +
+                "48.3 MB\n" +
                 ", 在所有 Java 提交中击败了\n" +
-                "44.49%\n" +
+                "45.74%\n" +
                 "的用户\n" +
                 "通过测试用例：\n" +
-                "63 / 63";
+                "83 / 83";
         System.out.println(str.replaceAll("\n", ""));
     }
 

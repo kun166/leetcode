@@ -1,4 +1,4 @@
-package com.test.leetcode.page3.chapter270;
+package com.test.leetcode.page3.chapter270.t270;
 
 import com.test.leetcode.TreeNode;
 
