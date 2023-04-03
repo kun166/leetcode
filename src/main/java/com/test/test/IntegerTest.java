@@ -32,6 +32,6 @@ public class IntegerTest {
 
     @Test
     public void test3() {
-        System.out.println(12&10);
+        System.out.println(10 &12*20);
     }
 }
