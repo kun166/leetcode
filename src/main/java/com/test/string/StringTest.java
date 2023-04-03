@@ -5,8 +5,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
-import java.util.UUID;
-
 /**
  * @program: study
  * @description:
@@ -19,17 +17,17 @@ public class StringTest {
     @Test
     public void testIntern() {
         String str = "执行用时：\n" +
-                "59 ms\n" +
+                "0 ms\n" +
                 ", 在所有 Java 提交中击败了\n" +
-                "93.67%\n" +
+                "100.00%\n" +
                 "的用户\n" +
                 "内存消耗：\n" +
-                "51.1 MB\n" +
+                "39.6 MB\n" +
                 ", 在所有 Java 提交中击败了\n" +
-                "30.38%\n" +
+                "17.42%\n" +
                 "的用户\n" +
                 "通过测试用例：\n" +
-                "49 / 49";
+                "41 / 41";
         System.out.println(str.replaceAll("\n", ""));
     }
 
