@@ -27,11 +27,16 @@ public class IntegerTest {
 
     @Test
     public void test2() {
-        System.out.println(86363858806033L % 8);
+        System.out.println(40604925994257L % 8);
     }
 
     @Test
     public void test3() {
-        System.out.println(10 &12*20);
+        double d = 1 - 0.5d / 100d;
+        double ans = 1;
+        for (int i = 0; i < 400; i++) {
+            ans *= d;
+        }
+        System.out.println(1 - ans);
     }
 }
