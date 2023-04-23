@@ -33,8 +33,8 @@ public class StringTest {
 
     @Test
     public void test() {
-        System.out.println("withdraw".toUpperCase());
-        System.out.println("PUSH_JUDUODUO".toLowerCase());
+        System.out.println("NewCustomer".toUpperCase());
+        System.out.println("NEW_CUSTOMER_COUPON_LOCK_KEY".toLowerCase());
     }
 
 
