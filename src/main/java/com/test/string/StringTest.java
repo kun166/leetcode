@@ -22,19 +22,19 @@ public class StringTest {
                 "100.00%\n" +
                 "的用户\n" +
                 "内存消耗：\n" +
-                "40 MB\n" +
+                "41.5 MB\n" +
                 ", 在所有 Java 提交中击败了\n" +
-                "92.64%\n" +
+                "89.13%\n" +
                 "的用户\n" +
                 "通过测试用例：\n" +
-                "290 / 290";
+                "44 / 44";
         System.out.println(str.replaceAll("\n", ""));
     }
 
     @Test
     public void test() {
-        System.out.println("NewCustomer".toUpperCase());
-        System.out.println("NEW_CUSTOMER_COUPON_LOCK_KEY".toLowerCase());
+        System.out.println("newCustomer".toUpperCase());
+        System.out.println("newCustomer".toLowerCase());
     }
 
 
