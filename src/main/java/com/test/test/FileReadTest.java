@@ -137,28 +137,45 @@ public class FileReadTest {
 
     @Test
     public void homeLog() {
-        Set<String> fail = new HashSet<>();
-        Set<String> success = new HashSet<>();
-        try (BufferedReader reader = new BufferedReader(new FileReader("/Users/qinfajia/code/session.log"))) {
+        int count = 0;
+        List<String> idList = new ArrayList<>();
+        Map<Long, List<String>> map = new HashMap<>();
+        try (BufferedReader reader = new BufferedReader(new FileReader("/Users/qinfajia/code/updateQuotaExpireService.log"))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                if (line.indexOf("route request wbId") > -1) {
+                if (line.indexOf("juduoduoCreditId") > -1) {
                     // 提取出来wbId
-                    String wbId = line.split("route request wbId:")[1].split(",groupId:12")[0];
-                    if (line.indexOf("很抱歉，您的综合评分不足") > -1) {
-                        fail.add(wbId);
-                    } else {
-                        success.add(wbId);
+                    count++;
+                    String id = line.split("\\{")[0].trim();
+
+                    String wbId = line.substring(line.lastIndexOf("}") + 1).trim();
+                    idList.add(id);
+                    Long key = Long.valueOf(wbId) % 8;
+                    List<String> l = map.get(key);
+                    if (l == null) {
+                        l = new ArrayList<>();
+                        map.put(key, l);
                     }
+                    l.add(id);
                 }
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        fail.removeAll(success);
-        System.out.println("fail:" + fail.size());
-        System.out.println(JSON.toJSONString(fail));
-        System.out.println("success:" + success.size());
-        System.out.println(JSON.toJSONString(success));
+        StringBuilder first = new StringBuilder("update credit set status = '300000104' where id in (");
+        for (String id : idList) {
+            first.append("'").append(id).append("',");
+        }
+
+        System.out.println(first.toString());
+
+        for (Map.Entry<Long, List<String>> entry : map.entrySet()) {
+            StringBuilder second = new StringBuilder("update credit_sharding_").append(entry.getKey()).append(" set status = '300000104' where id in (");
+            for (String id : entry.getValue()) {
+                second.append("'").append(id).append("',");
+            }
+            System.out.println(second);
+        }
+
     }
 }
