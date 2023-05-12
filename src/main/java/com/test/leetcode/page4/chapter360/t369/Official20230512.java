@@ -1,0 +1,37 @@
+package com.test.leetcode.page4.chapter360.t369;
+
+import com.test.leetcode.ListNode;
+
+/**
+ * @ClassName: Official20230512
+ * @Description:
+ * @Author: qinfajia
+ * @Date: 2023/5/12 09:39
+ * @Version: 1.0
+ */
+public class Official20230512 {
+    public ListNode plusOne(ListNode head) {
+        // sentinel head
+        ListNode sentinel = new ListNode(0);
+        sentinel.next = head;
+        ListNode notNine = sentinel;
+
+        // find the rightmost not-nine digit
+        while (head != null) {
+            if (head.val != 9) notNine = head;
+            head = head.next;
+        }
+
+        // increase this rightmost not-nine digit by 1
+        notNine.val++;
+        notNine = notNine.next;
+
+        // set all the following nines to zeros
+        while (notNine != null) {
+            notNine.val = 0;
+            notNine = notNine.next;
+        }
+
+        return sentinel.val != 0 ? sentinel : sentinel.next;
+    }
+}

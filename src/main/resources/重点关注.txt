@@ -246,6 +246,7 @@
 365,骚，解法挺风骚
 366,不会，也没官方解。但是大神的解答好像很猛：https://leetcode.cn/problems/find-leaves-of-binary-tree/solution/di-gui-100-by-gennji61/
 368,这题不错
+370,这题是真的牛逼……
 
 
 
