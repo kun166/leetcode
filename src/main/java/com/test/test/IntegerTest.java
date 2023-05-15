@@ -39,4 +39,10 @@ public class IntegerTest {
         }
         System.out.println(1 - ans);
     }
+
+    @Test
+    public void test4() {
+        int ans = 0x3f3f3f3f;
+        System.out.println(ans);
+    }
 }
