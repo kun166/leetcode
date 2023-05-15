@@ -9,7 +9,7 @@ import org.junit.Test;
  * @Date: 2023/5/15 09:17
  * @Version: 1.0
  */
-public class Solution20230515 {
+public class SolutionFirst20230515 {
 
     @Test
     public void test() {
