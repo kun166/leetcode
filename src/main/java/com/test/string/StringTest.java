@@ -19,15 +19,15 @@ public class StringTest {
         String str = "执行用时：\n" +
                 "1 ms\n" +
                 ", 在所有 Java 提交中击败了\n" +
-                "98.80%\n" +
+                "75.12%\n" +
                 "的用户\n" +
                 "内存消耗：\n" +
-                "40.1 MB\n" +
+                "39.6 MB\n" +
                 ", 在所有 Java 提交中击败了\n" +
-                "11.83%\n" +
+                "63.71%\n" +
                 "的用户\n" +
                 "通过测试用例：\n" +
-                "54 / 54";
+                "34 / 34";
         System.out.println(str.replaceAll("\n", ""));
     }
 

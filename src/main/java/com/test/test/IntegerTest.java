@@ -42,7 +42,12 @@ public class IntegerTest {
 
     @Test
     public void test4() {
-        int ans = 0x3f3f3f3f;
-        System.out.println(ans);
+        int start = 0;
+        for (; start < 10; start++) {
+            if (start == 5) {
+                break;
+            }
+        }
+        System.out.println(start);
     }
 }
