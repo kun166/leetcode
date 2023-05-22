@@ -17,24 +17,24 @@ public class StringTest {
     @Test
     public void testIntern() {
         String str = "执行用时：\n" +
-                "4 ms\n" +
+                "1 ms\n" +
                 ", 在所有 Java 提交中击败了\n" +
-                "100.00%\n" +
+                "75.12%\n" +
                 "的用户\n" +
                 "内存消耗：\n" +
-                "46.9 MB\n" +
+                "39.6 MB\n" +
                 ", 在所有 Java 提交中击败了\n" +
-                "38.57%\n" +
+                "63.71%\n" +
                 "的用户\n" +
                 "通过测试用例：\n" +
-                "48 / 48";
+                "34 / 34";
         System.out.println(str.replaceAll("\n", ""));
     }
 
     @Test
     public void test() {
-        System.out.println("NewCustomer".toUpperCase());
-        System.out.println("NEW_CUSTOMER_COUPON_LOCK_KEY".toLowerCase());
+        System.out.println("newCustomer".toUpperCase());
+        System.out.println("newCustomer".toLowerCase());
     }
 
 

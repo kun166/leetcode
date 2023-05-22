@@ -27,7 +27,7 @@ public class IntegerTest {
 
     @Test
     public void test2() {
-        System.out.println(40604925994257L % 8);
+        System.out.println(370921197207141561L % 8);
     }
 
     @Test
@@ -38,5 +38,16 @@ public class IntegerTest {
             ans *= d;
         }
         System.out.println(1 - ans);
+    }
+
+    @Test
+    public void test4() {
+        int start = 0;
+        for (; start < 10; start++) {
+            if (start == 5) {
+                break;
+            }
+        }
+        System.out.println(start);
     }
 }
