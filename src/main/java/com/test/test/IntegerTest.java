@@ -42,12 +42,6 @@ public class IntegerTest {
 
     @Test
     public void test4() {
-        int start = 0;
-        for (; start < 10; start++) {
-            if (start == 5) {
-                break;
-            }
-        }
-        System.out.println(start);
+        System.out.println(0xf);
     }
 }
