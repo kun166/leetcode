@@ -13,6 +13,10 @@ public class OfficialFirst20230526 {
 
     /**
      * 方法一：动态规划
+     * <p>
+     * 执行用时：91 ms, 在所有 Java 提交中击败了13.60%的用户
+     * 内存消耗：39.5 MB, 在所有 Java 提交中击败了17.08%的用户
+     * 通过测试用例：31 / 31
      *
      * @param nums
      * @param m
