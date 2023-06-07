@@ -51,8 +51,10 @@ public class StringTest {
 
     @Test
     public void test10() {
-        String idCard = "1234567890";
-        System.out.println(idCard.substring(idCard.length() - 4));
+        String str = "123456";
+        char[] array = str.toCharArray();
+        array[3] = 'a';
+        System.out.println(str);
     }
 
     private String hideIdCardNo(String idCardNo) {
