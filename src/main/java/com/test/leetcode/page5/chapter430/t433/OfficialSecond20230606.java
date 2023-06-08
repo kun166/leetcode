@@ -14,6 +14,14 @@ import java.util.Queue;
  */
 public class OfficialSecond20230606 {
 
+    /**
+     * 双向 BFS
+     *
+     * @param start
+     * @param end
+     * @param bank
+     * @return
+     */
     public int minMutation(String start, String end, String[] bank) {
         int m = start.length();
         int n = bank.length;
