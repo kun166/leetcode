@@ -11,6 +11,15 @@ import com.test.leetcode.ListNode;
  */
 public class Solution20230612 {
 
+    /**
+     * 执行用时：1 ms, 在所有 Java 提交中击败了100.00%的用户
+     * 内存消耗：42.2 MB, 在所有 Java 提交中击败了26.66%的用户
+     * 通过测试用例：1563 / 1563
+     *
+     * @param l1
+     * @param l2
+     * @return
+     */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         // 先翻转
         l1 = reverse(l1);
