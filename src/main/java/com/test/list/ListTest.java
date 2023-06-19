@@ -44,4 +44,21 @@ public class ListTest {
         System.out.println(JSON.toJSONString(list));
 
     }
+
+    @Test
+    public void testRemove() {
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            list.add(i);
+        }
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i) == 5 || list.get(i) == 8) {
+                list.remove(i);
+                i--;
+            }
+        }
+        for (int i : list) {
+            System.out.println(i);
+        }
+    }
 }
