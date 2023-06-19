@@ -14,6 +14,7 @@ public class OfficialSecond20230619 {
 
     /**
      * 方法二：枚举1
+     * 寻找1，单调栈是2，maxK是真正可以作为2的最大值
      *
      * @param nums
      * @return
@@ -28,9 +29,11 @@ public class OfficialSecond20230619 {
 
         for (int i = n - 2; i >= 0; --i) {
             if (nums[i] < maxK) {
+                // 说明nums[i]是1
                 return true;
             }
             while (!candidateK.isEmpty() && nums[i] > candidateK.peek()) {
+                // maxK是可以作为2的最大值
                 maxK = candidateK.pop();
             }
             if (nums[i] > maxK) {
