@@ -26,6 +26,7 @@ public class OfficeKMP {
         int[] pi = new int[m];
         // 下面这个循环，是速求needle的pmt数组
         // 为什么i从1开始？因为0的话，就是一个字符，匹配度为0。即pi[0]永远为0。且从0开始求的也不正确
+        // 求公共前后缀，前缀不算最后一个字符，后缀不算第一个字符。公共前后缀不算字符串本身
         for (int i = 1, j = 0; i < m; i++) {
             while (j > 0 && needle.charAt(i) != needle.charAt(j)) {
                 // 说明不匹配。如果不匹配，就从j的上一个位置的pmt开始匹配
