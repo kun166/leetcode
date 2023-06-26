@@ -33,11 +33,13 @@ public class Official20230625 {
         if (!memo.containsKey(usedNumbers)) {
             boolean res = false;
             for (int i = 0; i < maxChoosableInteger; i++) {
+                // 尝试各个数。如果((usedNumbers >> i) & 1) == 1，说明这个数已经被选择了
                 if (((usedNumbers >> i) & 1) == 0) {
                     if (i + 1 + currentTotal >= desiredTotal) {
                         res = true;
                         break;
                     }
+                    // i只是下标，实际上表示的是i+1
                     if (!dfs(maxChoosableInteger, usedNumbers | (1 << i), desiredTotal, currentTotal + i + 1)) {
                         res = true;
                         break;
