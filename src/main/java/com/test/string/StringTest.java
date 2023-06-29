@@ -33,7 +33,7 @@ public class StringTest {
 
     @Test
     public void test() {
-        System.out.println("newCustomer".toUpperCase());
+        System.out.println("fundBindProductList".toUpperCase());
         System.out.println("newCustomer".toLowerCase());
     }
 
