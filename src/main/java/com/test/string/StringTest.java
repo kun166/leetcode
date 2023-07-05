@@ -17,17 +17,17 @@ public class StringTest {
     @Test
     public void testIntern() {
         String str = "执行用时：\n" +
-                "0 ms\n" +
+                "9 ms\n" +
                 ", 在所有 Java 提交中击败了\n" +
-                "100.00%\n" +
+                "37.81%\n" +
                 "的用户\n" +
                 "内存消耗：\n" +
-                "38.8 MB\n" +
+                "42.5 MB\n" +
                 ", 在所有 Java 提交中击败了\n" +
-                "93.16%\n" +
+                "7.01%\n" +
                 "的用户\n" +
                 "通过测试用例：\n" +
-                "52 / 52";
+                "140 / 140";
         System.out.println(str.replaceAll("\n", ""));
     }
 
