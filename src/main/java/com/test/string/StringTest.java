@@ -17,14 +17,14 @@ public class StringTest {
     @Test
     public void testIntern() {
         String str = "执行用时：\n" +
-                "48 ms\n" +
+                "21 ms\n" +
                 ", 在所有 Java 提交中击败了\n" +
-                "15.22%\n" +
+                "90.72%\n" +
                 "的用户\n" +
                 "内存消耗：\n" +
-                "43.6 MB\n" +
+                "40 MB\n" +
                 ", 在所有 Java 提交中击败了\n" +
-                "41.96%\n" +
+                "87.56%\n" +
                 "的用户\n" +
                 "通过测试用例：\n" +
                 "141 / 141";

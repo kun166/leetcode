@@ -17,8 +17,8 @@ public class Solution20230720 {
     }
 
     /**
-     * 执行用时：48 ms, 在所有 Java 提交中击败了15.22%的用户
-     * 内存消耗：43.6 MB, 在所有 Java 提交中击败了41.96%的用户
+     * 执行用时：21 ms, 在所有 Java 提交中击败了90.72%的用户
+     * 内存消耗：40 MB, 在所有 Java 提交中击败了87.56%的用户
      * 通过测试用例：141 / 141
      *
      * @param nums
@@ -33,17 +33,18 @@ public class Solution20230720 {
             return false;
         }
         int half = sum / 2;
-        // dp[i][j]表示前i个数，能否组合成j
-        boolean[][] dp = new boolean[n + 1][half + 1];
-        dp[0][0] = true;
+        boolean[] dp = new boolean[half + 1];
+        dp[0] = true;
         for (int i = 1; i <= n; i++) {
-            for (int j = 0; j <= half; j++) {
-                dp[i][j] = dp[i - 1][j];
+            for (int j = half; j >= 0; j--) {
                 if (j >= nums[i - 1]) {
-                    dp[i][j] = dp[i][j] || dp[i - 1][j - nums[i - 1]];
+                    dp[j] = dp[j] || dp[j - nums[i - 1]];
                 }
             }
+            if (dp[half]) {
+                return true;
+            }
         }
-        return dp[n][half];
+        return false;
     }
 }
