@@ -17,23 +17,23 @@ public class StringTest {
     @Test
     public void testIntern() {
         String str = "执行用时：\n" +
-                "1366 ms\n" +
+                "0 ms\n" +
                 ", 在所有 Java 提交中击败了\n" +
-                "5.00%\n" +
+                "100.00%\n" +
                 "的用户\n" +
                 "内存消耗：\n" +
-                "52.1 MB\n" +
+                "39.8 MB\n" +
                 ", 在所有 Java 提交中击败了\n" +
-                "5.00%\n" +
+                "65.55%\n" +
                 "的用户\n" +
                 "通过测试用例：\n" +
-                "588 / 588";
+                "551 / 551";
         System.out.println(str.replaceAll("\n", ""));
     }
 
     @Test
     public void test() {
-        System.out.println("fundBindProductList".toUpperCase());
+        System.out.println("MultiDeduction".toUpperCase());
         System.out.println("newCustomer".toLowerCase());
     }
 
@@ -46,29 +46,35 @@ public class StringTest {
 
     @Test
     public void test4() {
-        System.out.println("123".substring(0, 0));
+        System.out.println("123".substring(0, 1));
     }
 
     @Test
     public void test10() {
-        String str = "123456";
-        char[] array = str.toCharArray();
-        array[3] = 'a';
-        System.out.println(str);
+        String str = "建⽴过程：\n" +
+                "1. client发送加密请求，⽣成并发送第1随机数\n" +
+                "2. server收到请求，⽣成并返回第2随机数\n" +
+                "3. server将注册在ca的公钥+ca数据证书发送给client\n" +
+                "4. client⽣成第3随机数，第1+2+3随机数⽤公钥加密⽣成会话密钥发送给server\n" +
+                "5. 双⽅后续通过会话密钥加解密数据（对称加密）";
+        String[] arr = str.split("\n");
+        for (String s : arr) {
+            if (s.indexOf(".") > -1) {
+                System.out.println(s.substring(s.indexOf(".") + 1).trim());
+            } else {
+                System.out.println(s.trim());
+            }
+
+        }
     }
 
-    private String hideIdCardNo(String idCardNo) {
-        if (StringUtils.isBlank(idCardNo)) {
-            return null;
-        }
-        if (idCardNo.length() <= 8) {
-            return idCardNo;
-        }
-        StringBuilder builder = new StringBuilder(idCardNo.substring(0, 6));
-        for (int i = 6; i < idCardNo.length() - 2; i++) {
-            builder.append("*");
-        }
-        builder.append(idCardNo.substring(idCardNo.length() - 2));
-        return builder.toString();
+    @Test
+    public void test11() {
+        String str = "aa";
+        int index = str.lastIndexOf(".");
+        System.out.println(index);
+        System.out.println(str.substring(0, index));
+        System.out.println(str.substring(index));
+
     }
 }
