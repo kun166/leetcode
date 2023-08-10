@@ -1,5 +1,6 @@
 package com.test.test;
 
+import com.alibaba.fastjson.JSON;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -43,5 +44,33 @@ public class IntegerTest {
     @Test
     public void test4() {
         System.out.println(0xf);
+    }
+
+    @Test
+    public void test5() {
+        int n = 3;
+        int[] array = new int[n];
+        for (int i = 1; i <= n; i++) {
+            array[i - 1] = i;
+        }
+        dfs(array, 0);
+    }
+
+    private void dfs(int[] array, int index) {
+        if (index == array.length) {
+            System.out.println(JSON.toJSONString(array));
+            return;
+        }
+        for (int i = index; i < array.length; i++) {
+            // 两两交换位置？
+            int first = array[index];
+            array[index] = array[i];
+            array[i] = first;
+            dfs(array, index + 1);
+            // 变回来？
+            first = array[index];
+            array[index] = array[i];
+            array[i] = first;
+        }
     }
 }
