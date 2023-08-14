@@ -40,6 +40,7 @@ public class StringTest {
 
     @Test
     public void test2() {
+        System.out.println(Thread.currentThread().getContextClassLoader().toString());
         System.out.println(JSON.toJSONString(null));
     }
 
