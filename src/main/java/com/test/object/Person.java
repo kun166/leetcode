@@ -8,9 +8,9 @@ package com.test.object;
  */
 public class Person implements Cloneable {
 
-    public Integer age;
+    protected Integer age;
 
-    public String name;
+    protected String name;
 
     @Override
     public Person clone() throws CloneNotSupportedException {

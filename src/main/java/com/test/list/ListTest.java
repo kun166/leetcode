@@ -63,22 +63,4 @@ public class ListTest {
             System.out.println(i);
         }
     }
-
-    @Test
-    public void testJSON() {
-        List<Person> list = new ArrayList<>();
-        Person p1 = new Person();
-        p1.name = "张三";
-        p1.age = 14;
-        list.add(p1);
-
-        Person p2 = new Person();
-        p2.name = "李四";
-        p2.age = 15;
-        list.add(p2);
-
-        System.out.println(Optional.ofNullable(list).map(bean -> JSON.toJSONString(bean)).orElse(null));
-        System.out.println("[{\"divisionAccountCd\":1001,\"divisionAmt\":270.77},{\"divisionAccountCd\":1002,\"divisionAmt\":21.32}]".length());
-
-    }
 }

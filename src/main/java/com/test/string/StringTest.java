@@ -71,7 +71,7 @@ public class StringTest {
 
     @Test
     public void test11() {
-        String str = "aa";
+        String str = "aa.txt";
         int index = str.lastIndexOf(".");
         System.out.println(index);
         System.out.println(str.substring(0, index));
