@@ -28,7 +28,8 @@ public class IntegerTest {
 
     @Test
     public void test2() {
-        System.out.println("65612933290256".hashCode() % 8);
+        System.out.println("51509348665875".hashCode()%8);
+        System.out.println("2094995539933711737".hashCode() % 8);
     }
 
     @Test
