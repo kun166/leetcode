@@ -1,34 +1,30 @@
 package com.test.leetcode.page6.chapter540.t547;
 
-import org.junit.Test;
-
 /**
- * @ClassName: SolutionSecond20230901
+ * @ClassName: Solution20230904
  * @Description:
  * @Author: qinfajia
- * @Date: 2023/9/1 14:21
+ * @Date: 2023/9/4 09:58
  * @Version: 1.0
  */
-public class SolutionSecond20230901 {
+public class Solution20230904 {
 
-    @Test
-    public void test() {
-
-        int[][] array = new int[][]{{1, 0, 0, 1}, {0, 1, 1, 0}, {0, 1, 1, 1}, {1, 0, 1, 1}};
-        System.out.println(findCircleNum(array));
-    }
 
     /**
-     * 查并集，一定要学会啊
+     * 学习并查集
+     * <p>
+     * 1ms
+     * 击败 97.70%使用 Java 的用户
+     * 43.91MB
+     * 击败 30.83%使用 Java 的用户
      *
      * @param isConnected
      * @return
      */
     public int findCircleNum(int[][] isConnected) {
         int cities = isConnected.length;
-        // 定义父节点
         int[] parent = new int[cities];
-        // 初始化父节点,开始每个点的父节点都是自己
+        // 初始化，每个城市的父城市都是自己
         for (int i = 0; i < cities; i++) {
             parent[i] = i;
         }
@@ -48,10 +44,26 @@ public class SolutionSecond20230901 {
         return ans;
     }
 
+    /**
+     * 并
+     *
+     * @param parent
+     * @param p1
+     * @param p2
+     */
     public void union(int[] parent, int p1, int p2) {
-        parent[findParent(parent, p1)] = findParent(parent, p2);
+        if (findParent(parent, p1) != findParent(parent, p2)) {
+            parent[findParent(parent, p1)] = findParent(parent, p2);
+        }
     }
 
+    /**
+     * 查
+     *
+     * @param parent
+     * @param p
+     * @return
+     */
     public int findParent(int[] parent, int p) {
         if (parent[p] != p) {
             parent[p] = findParent(parent, parent[p]);
