@@ -16,15 +16,16 @@ public class LockSupportTest {
         public void run() {
             System.out.println(getName() + "进入线程");
             LockSupport.park();
-            System.out.println("t1程运行结束");
+            System.out.println(getName() + "运行结束");
         }
     }
 
     public static void main(String[] args) {
         MyThread t1 = new MyThread();
         t1.start();
-        System.out.println("t1已经启动，但是在内部进行了park");
+        MyThread t2 = new MyThread();
+        t2.start();
         LockSupport.unpark(t1);
-        System.out.println("LockSupport进行了 unpark");
+        //LockSupport.unpark(t2);
     }
 }

@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import org.junit.Test;
 
 import java.math.BigDecimal;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @program: leetcode
@@ -28,8 +29,12 @@ public class IntegerTest {
 
     @Test
     public void test2() {
-        System.out.println("51509348665875".hashCode()%8);
-        System.out.println("2094995539933711737".hashCode() % 8);
+        AtomicInteger nextHashCode = new AtomicInteger();
+        for (int i = 0; i < 10; i++) {
+            System.out.println(nextHashCode.getAndAdd(0x61c88647));
+        }
+//        System.out.println("51509348665875".hashCode() % 8);
+//        System.out.println("2094995539933711737".hashCode() % 8);
     }
 
     @Test

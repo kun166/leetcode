@@ -10,12 +10,15 @@ import java.lang.ref.WeakReference;
  */
 public class WeakReferenceTest {
 
-    private byte[] data = new byte[1024 * 1024];
-
     public static void main(String[] args) {
-        String s = "123";
+        // 这个地方需要考虑常量池的影响
+        String s = new String("123");
         WeakReference wr = new WeakReference(s);
-        s = null;
+        // s = null;
+        for (int i = 0; i < 10000; i++) {
+            new Object();
+        }
         System.out.println(wr.get());
+        System.out.println(s);
     }
 }
