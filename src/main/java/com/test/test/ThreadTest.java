@@ -10,8 +10,10 @@ import org.junit.Test;
  */
 public class ThreadTest {
 
+    @Test
     public void test() {
-
+        Thread t = new Thread(() -> System.out.println(Thread.currentThread().getName()), "testThread");
+        t.start();
     }
 
     @Test

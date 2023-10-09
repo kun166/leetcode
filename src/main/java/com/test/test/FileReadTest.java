@@ -178,4 +178,26 @@ public class FileReadTest {
         }
 
     }
+
+    @Test
+    public void doPrivileged() {
+        Map<String, Integer> map = new HashMap<>();
+        try (BufferedReader reader = new BufferedReader(new FileReader("/Users/qinfajia/code/error.log"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                if (StringUtils.isBlank(line)) {
+                    continue;
+                }
+                map.put(line, map.getOrDefault(line, 0) + 1);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String[] array = new String[map.size()];
+        map.keySet().toArray(array);
+        Arrays.sort(array);
+        for (String key : array) {
+            System.out.println(key + ":" + map.get(key));
+        }
+    }
 }

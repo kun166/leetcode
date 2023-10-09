@@ -79,4 +79,17 @@ public class IntegerTest {
             array[i] = first;
         }
     }
+
+    @Test
+    public void test6() {
+        int COUNT_BITS = 29;
+        int RUNNING = -1 << COUNT_BITS;
+        System.out.println(Integer.toBinaryString((1 << COUNT_BITS) - 1));
+        System.out.println((1 << COUNT_BITS) - 1);
+        System.out.println(Integer.toBinaryString(~((1 << COUNT_BITS) - 1)));
+    }
+
+    private int ctlOf(int rs, int wc) {
+        return rs | wc;
+    }
 }

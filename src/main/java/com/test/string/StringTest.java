@@ -5,6 +5,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 /**
  * @program: study
  * @description:
@@ -33,7 +36,7 @@ public class StringTest {
 
     @Test
     public void test() {
-        System.out.println("MultiDeduction".toUpperCase());
+        System.out.println("PictureUpload".toUpperCase());
         System.out.println("newCustomer".toLowerCase());
     }
 
@@ -71,11 +74,19 @@ public class StringTest {
 
     @Test
     public void test11() {
-        String str = "aa.txt";
-        int index = str.lastIndexOf(".");
-        System.out.println(index);
-        System.out.println(str.substring(0, index));
-        System.out.println(str.substring(index));
+
+//        try {
+//            String url = "http://www.pic.58cdn.com/secret/haojie/n_jsdklfji231ljfasdf.png";
+//            URL uri = new URL(url);
+//            System.out.println(uri.getPath());
+//        } catch (MalformedURLException e) {
+//            e.printStackTrace();
+//        }
+
+        for (int i = 0; i < 1000; i++) {
+            System.out.println("long i" + i + " = " + i + "l + deep;");
+        }
+
 
     }
 }
