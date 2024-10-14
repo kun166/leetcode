@@ -6,6 +6,7 @@ import javax.mail.Session;
 import java.util.Properties;
 
 /**
+ * https://developer.aliyun.com/article/1556614
  * @ClassName: JavaMailUntil
  * @Description:
  * @Author: qinfajia
