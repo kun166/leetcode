@@ -1,12 +1,12 @@
 package com.test.mail;
 
-import javax.mail.Authenticator;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import java.util.Properties;
 
 /**
  * https://developer.aliyun.com/article/1556614
+ *
  * @ClassName: JavaMailUntil
  * @Description:
  * @Author: qinfajia
@@ -18,9 +18,12 @@ public class JavaMailUntil {
     public static Session createSession() {
 
         // 邮件服务器配置
-        String host = "smtp.163.com";
-        final String user = "qinfajia@163.com"; // 发件人邮箱
-        final String password = "Qin780428"; // 发件人密码
+        //String host = "smtp.163.com";
+        String host = "smtp.qq.com";
+//        final String user = "friendsabc6666@163.com"; // 发件人邮箱
+//        final String password = "05355329514"; // 发件人密码
+        final String user = "3393433534@qq.com"; // 发件人邮箱
+        final String password = "20Glass10"; // 发件人密码
         // 收件人邮箱
         //String to = "recipient-email@example.com";
         // 配置属性

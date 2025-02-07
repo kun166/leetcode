@@ -1,6 +1,5 @@
 package com.test.leetcode.page5.chapter440.t442;
 
-import com.sun.xml.internal.xsom.XSUnionSimpleType;
 import org.junit.Test;
 
 import java.util.ArrayList;

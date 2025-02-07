@@ -3,7 +3,9 @@ package com.test.test;
 import com.alibaba.fastjson.JSON;
 import org.junit.Test;
 
-import java.math.BigDecimal;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -16,9 +18,11 @@ public class IntegerTest {
 
     @Test
     public void test() {
-        BigDecimal bigDecimal = new BigDecimal(1100000L);
-        System.out.println(bigDecimal.divide(new BigDecimal("100")));
-
+//        BigDecimal bigDecimal = new BigDecimal(1100000L);
+//        System.out.println(bigDecimal.divide(new BigDecimal("100")));
+        Date date = new Date(1724382553905L);
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        System.out.println(df.format(date));
     }
 
     @Test
@@ -39,9 +43,9 @@ public class IntegerTest {
 
     @Test
     public void test3() {
-        double d = 1 - 0.5d / 100d;
+        double d = 1 - 2d / 100d;
         double ans = 1;
-        for (int i = 0; i < 400; i++) {
+        for (int i = 0; i < 100; i++) {
             ans *= d;
         }
         System.out.println(1 - ans);
@@ -49,7 +53,12 @@ public class IntegerTest {
 
     @Test
     public void test4() {
-        System.out.println(0xf);
+        //double d = 0.02d;
+        double result = 1.0d;
+        for (int i = 0; i < 10; i++) {
+            result = result * 0.98d;
+        }
+        System.out.println(1.0d - result);
     }
 
     @Test
@@ -87,9 +96,36 @@ public class IntegerTest {
         System.out.println(Integer.toBinaryString((1 << COUNT_BITS) - 1));
         System.out.println((1 << COUNT_BITS) - 1);
         System.out.println(Integer.toBinaryString(~((1 << COUNT_BITS) - 1)));
+
+
+        System.out.println("------------------------");
+        long start = 1500;
+        long sum = 0;
+        for (int i = 1; i <= 1511; i++) {
+            sum += start + (i / 15) * 500;
+//            if (sum > 876000) {
+//                System.out.println(i);
+//                break;
+//            }
+        }
+        System.out.println(sum);
     }
 
-    private int ctlOf(int rs, int wc) {
-        return rs | wc;
+    @Test
+    public void test7() {
+        System.out.println("------------------------");
+        long start = 1500;
+        long sum = 0;
+        for (int i = 1; i <= 150; i++) {
+            sum += start + (i / 15) * 500;
+        }
+        System.out.println(sum);
+    }
+
+    @Test
+    public void test8() {
+        System.out.println(77567701069843L%8);
+//        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//        System.out.println(df.format(new Date(System.currentTimeMillis() + 2L * 60L * 60L * 1000L)));
     }
 }

@@ -1,6 +1,5 @@
 package com.test.leetcode.page5.chapter420.t424;
 
-import com.sun.xml.internal.xsom.XSUnionSimpleType;
 import org.junit.Test;
 
 /**

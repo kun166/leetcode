@@ -94,4 +94,9 @@ public class ListTest {
             System.out.println(queue.poll());
         }
     }
+
+    @Test
+    public void test3(){
+        System.out.println(ListTest.class.getSimpleName());
+    }
 }

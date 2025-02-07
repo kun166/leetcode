@@ -1,12 +1,17 @@
 package com.test.string;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
+import java.util.StringTokenizer;
+import java.util.regex.Pattern;
 
 /**
  * @program: study
@@ -16,6 +21,8 @@ import java.net.URL;
  */
 @Slf4j
 public class StringTest {
+
+    public final transient int i = 0;
 
     @Test
     public void testIntern() {
@@ -36,8 +43,9 @@ public class StringTest {
 
     @Test
     public void test() {
-        System.out.println("PictureUpload".toUpperCase());
-        System.out.println("newCustomer".toLowerCase());
+        System.out.println("customerIsContains".toUpperCase());
+        System.out.println("CREDIT_PRE_MEM_CREDIT_TASK".toLowerCase());
+        System.out.println(StringTest.class.getName());
     }
 
 
@@ -50,7 +58,7 @@ public class StringTest {
 
     @Test
     public void test4() {
-        System.out.println("123".substring(0, 1));
+        System.out.println(0 << 16 | 65);
     }
 
     @Test
@@ -74,19 +82,77 @@ public class StringTest {
 
     @Test
     public void test11() {
+//        String jsonStr = "{\\\"SOURCE\\\":\\\"RISK_MAN\\\",\\\"SUBJECT\\\":\\\"CONSUMERLOAN_WITHDRAW_RESULT\\\",\\\"BUSINESS_DATA\\\":{\\\"zyRejectRuleInd\\\":\\\"-99\\\",\\\"isDowngradeAdjLine\\\":\\\"-99\\\",\\\"subject\\\":\\\"2\\\",\\\"rejectDesc\\\":\\\"-99\\\",\\\"cheatd\\\":-99,\\\"assetSegmentLevel\\\":\\\"L2\\\",\\\"isDowngradeAdjProd\\\":\\\"-99\\\",\\\"procInstId\\\":6687244392004471483,\\\"wdPassType\\\":\\\"-99\\\",\\\"rejectDeadline\\\":2160.0,\\\"customerDowngradeLabel\\\":\\\"-99\\\",\\\"applyId\\\":\\\"6568838122241396647\\\",\\\"preMemCreditResult\\\":\\\"1\\\",\\\"rejectCode\\\":\\\"ZX27\\\",\\\"withdrawNo\\\":\\\"6298437701508228944\\\",\\\"creditResult\\\":-1,\\\"isNewBorrow\\\":\\\"1\\\",\\\"downgradeLine\\\":\\\"-99\\\",\\\"downgradeProdGroup\\\":\\\"-99\\\"}}";
+//        jsonStr = jsonStr.replaceAll("\\\\", "");
+//        jsonStr = jsonStr.replaceAll("\"\\{", "{");
+//        jsonStr = jsonStr.replaceAll("}\"", "}");
+//        System.out.println(jsonStr);
 
-//        try {
-//            String url = "http://www.pic.58cdn.com/secret/haojie/n_jsdklfji231ljfasdf.png";
-//            URL uri = new URL(url);
-//            System.out.println(uri.getPath());
-//        } catch (MalformedURLException e) {
-//            e.printStackTrace();
-//        }
-
-        for (int i = 0; i < 1000; i++) {
-            System.out.println("long i" + i + " = " + i + "l + deep;");
-        }
+        System.out.println("申请未通过？\n点击查看原因，获得授信评估机会");
 
 
     }
+
+    private void parse(JSONObject json) {
+        if (json == null || json.isEmpty()) {
+            return;
+        }
+        for (Map.Entry<String, Object> entry : json.entrySet()) {
+            String valueStr = entry.getValue().toString();
+            // System.out.println(valueStr);
+            if (valueStr.indexOf("{") == -1) {
+                // 基本类型了，不处理了
+                continue;
+            }
+            JSONObject child = JSON.parseObject(valueStr);
+            parse(child);
+            json.put(entry.getKey(), child);
+        }
+    }
+
+    @Test
+    public void test12() {
+        Pattern pattern = Pattern.compile("^([1-9]|[1-9]\\d|1\\d{2}|2[0-4]\\d|25[0-5])(\\.(\\d|[1-9]\\d|1\\d{2}|2[0-4]\\d|25[0-5])){3}$");
+        System.out.println(pattern.matcher("127.0.0.1").matches());
+        System.out.println("bulkCharLength".toLowerCase());
+        int l = 5, h = 10;
+        System.out.println(l + h >>> 1);
+    }
+
+    @Test
+    public void test13() {
+        StringTokenizer st = new StringTokenizer("abc,def;g", ",;");
+        while (st.hasMoreTokens()) {
+            System.out.println(st.nextToken());
+        }
+
+        System.out.println("---------------");
+        Pattern NAME_SEPARATOR = Pattern.compile("\\s*[,]+\\s*");
+
+        for (String sp : NAME_SEPARATOR.split("abc,def;g")) {
+            System.out.println(sp);
+        }
+    }
+
+    @Test
+    public void test14() {
+        Random random = new Random();
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < 100; i++) {
+            int num = random.nextInt(100);
+            //map.computeIfAbsent(num, key -> map.get(num) == null ? 1 : map.get(num) + 1);
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            System.out.println("key:" + entry.getKey() + ";value:" + entry.getValue());
+        }
+
+    }
+
+    @Test
+    public void test15() {
+        BigDecimal bd = new BigDecimal("0.1889");
+        System.out.println(bd.divide(new BigDecimal("365"), 5, RoundingMode.DOWN));
+    }
+
 }
