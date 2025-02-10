@@ -124,8 +124,7 @@ public class IntegerTest {
 
     @Test
     public void test8() {
-        System.out.println(77567701069843L%8);
-//        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-//        System.out.println(df.format(new Date(System.currentTimeMillis() + 2L * 60L * 60L * 1000L)));
+        System.out.println(77567701069843L % 8);
+        System.out.println(10L == 10);
     }
 }
