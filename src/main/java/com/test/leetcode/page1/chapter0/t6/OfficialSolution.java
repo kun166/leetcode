@@ -30,7 +30,8 @@ public class OfficialSolution {
         for (char c : s.toCharArray()) {
             rows.get(curRow).append(c);
             // 第一行或者是倒数第一行的时候，就转向
-            if (curRow == 0 || curRow == numRows - 1) goingDown = !goingDown;
+            if (curRow == 0 || curRow == numRows - 1)
+                goingDown = !goingDown;
             curRow += goingDown ? 1 : -1;
         }
 
