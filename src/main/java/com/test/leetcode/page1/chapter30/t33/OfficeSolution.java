@@ -11,6 +11,9 @@ public class OfficeSolution {
 
     /**
      * 解法清奇
+     * <p>
+     * 这种方式的双指针法，适合只需要搜寻一半。
+     * 如果两边都需要搜寻，就没法用双指针……
      *
      * @param nums
      * @param target

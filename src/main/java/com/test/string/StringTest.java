@@ -7,10 +7,7 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
-import java.util.StringTokenizer;
+import java.util.*;
 import java.util.regex.Pattern;
 
 /**
@@ -153,6 +150,28 @@ public class StringTest {
     public void test15() {
         BigDecimal bd = new BigDecimal("0.1889");
         System.out.println(bd.divide(new BigDecimal("365"), 5, RoundingMode.DOWN));
+
+
+        LinkedList<Integer> ll = new LinkedList<>();
+        ll.add(1);
+        ll.add(2);
+
+        System.out.println(JSON.toJSONString(ll));
+        ll.push(3);
+
+        System.out.println(JSON.toJSONString(ll));
+        ll.addLast(4);
+
+        System.out.println(JSON.toJSONString(ll));
+        ll.remove();
+
+        System.out.println(JSON.toJSONString(ll));
+        ll.poll();
+
+        System.out.println(JSON.toJSONString(ll));
+        ll.pop();
+
+        System.out.println(JSON.toJSONString(ll));
     }
 
 }

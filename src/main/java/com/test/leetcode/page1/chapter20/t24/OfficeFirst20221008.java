@@ -11,6 +11,12 @@ import com.test.leetcode.ListNode;
  */
 public class OfficeFirst20221008 {
 
+    /**
+     * 呃，有点厉害……
+     *
+     * @param head
+     * @return
+     */
     public ListNode swapPairs(ListNode head) {
         if (head == null || head.next == null) {
             // 递归终止条件

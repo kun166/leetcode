@@ -1,6 +1,8 @@
 package com.test.test;
 
 import com.alibaba.fastjson.JSON;
+import com.test.leetcode.ListNode;
+import com.test.leetcode.ListNodeUtil;
 import org.junit.Test;
 
 import java.text.DateFormat;
@@ -126,5 +128,47 @@ public class IntegerTest {
     public void test8() {
         System.out.println(77567701069843L % 8);
         System.out.println(10L == 10);
+
+//        DecimalFormat df = new DecimalFormat("####,###");
+//        System.out.println(df.format(new BigDecimal("3456.78")));
+//        Calendar calendar = Calendar.getInstance();
+//        System.out.println("有效期至" + (calendar.get(Calendar.MONTH) + 1) + "月" + calendar.get(Calendar.DAY_OF_MONTH) + "日");
+        String str = "15天";
+        System.out.println(str.substring(0, str.length() - 1));
+        System.out.println(str.substring(str.length() - 1));
+
+        Date date = new Date();
+        System.out.println(date.getDate());
+        System.out.println(date.getMonth());
+    }
+
+    @Test
+    public void test9() {
+        ListNode head = ListNodeUtil.createListNode(1, 2, 3, 4, 5, 6);
+        System.out.println(JSON.toJSONString(revers(head, null)));
+        head = ListNodeUtil.createListNode(1, 2, 3, 4, 5, 6);
+        System.out.println(JSON.toJSONString(revers(head)));
+    }
+
+    public ListNode revers(ListNode curr, ListNode pre) {
+        if (curr.next == null) {
+            curr.next = pre;
+            return curr;
+        }
+        ListNode next = curr.next;
+        curr.next = pre;
+        return revers(next, curr);
+    }
+
+    public ListNode revers(ListNode curr) {
+        ListNode pre = null;
+        while (curr.next != null) {
+            ListNode next = curr.next;
+            curr.next = pre;
+            pre = curr;
+            curr = next;
+        }
+        curr.next = pre;
+        return curr;
     }
 }

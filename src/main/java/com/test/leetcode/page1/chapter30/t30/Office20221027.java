@@ -19,7 +19,7 @@ public class Office20221027 {
         List<Integer> res = new ArrayList<Integer>();
         // 定义字符串数组长度，每个字符串的长度，字符串s的长度
         int m = words.length, n = words[0].length(), ls = s.length();
-        // 遍历字符串s中的每一个字符
+        // 遍历words中一个字符串的长度,后面通过滑动窗口
         for (int i = 0; i < n; i++) {
             // 快速失败，如果长度不符合要求就快速失败
             if (i + m * n > ls) {
@@ -40,12 +40,18 @@ public class Office20221027 {
                 }
             }
             for (int start = i; start < ls - m * n + 1; start += n) {
+                // 1,快速失败;2,每次增加words的一个字符串长度
+                // 就是滑动窗口了
                 if (start != i) {
+                    // 不是从i开始了，开始滑动窗口
+                    // 滑动一个窗口距离(即长度n的字符串)
+                    // 增加后一个窗口
                     String word = s.substring(start + (m - 1) * n, start + m * n);
                     differ.put(word, differ.getOrDefault(word, 0) + 1);
                     if (differ.get(word) == 0) {
                         differ.remove(word);
                     }
+                    // 减掉前一个窗口
                     word = s.substring(start - n, start);
                     differ.put(word, differ.getOrDefault(word, 0) - 1);
                     if (differ.get(word) == 0) {
