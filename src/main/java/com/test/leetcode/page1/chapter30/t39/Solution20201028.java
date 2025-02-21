@@ -3,7 +3,6 @@ package com.test.leetcode.page1.chapter30.t39;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -29,13 +28,13 @@ public class Solution20201028 {
     /**
      * 递归+回溯
      *
+     * 参考{@link Solution20250221}
+     *
      * @param candidates
      * @param target
      * @return
      */
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
-        // 先排序
-        Arrays.sort(candidates);
         List<List<Integer>> result = new ArrayList<>();
         List<Integer> list = new ArrayList<>();
         combinationSum(result, list, 0, candidates, target);
@@ -44,13 +43,11 @@ public class Solution20201028 {
 
     public void combinationSum(List<List<Integer>> result, List<Integer> list, int index, int[] candidates, int target) {
         for (int i = index; i < candidates.length; i++) {
-            if (candidates[i] == target) {
-                List<Integer> l = new ArrayList<>(list);
-                l.add(candidates[i]);
-                result.add(l);
+            if (target == 0) {
+                result.add(new ArrayList<>(list));
                 return;
             }
-            if (candidates[i] > target) {
+            if (target < 0) {
                 return;
             }
             list.add(candidates[i]);
