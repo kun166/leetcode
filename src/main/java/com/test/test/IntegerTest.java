@@ -32,11 +32,18 @@ public class IntegerTest {
 
     @Test
     public void test3() {
-        double d = 1 - 0.5d / 100d;
+        double d = 1 - 1d / 100d;
         double ans = 1;
-        for (int i = 0; i < 400; i++) {
+        for (int i = 0; i < 100; i++) {
             ans *= d;
         }
         System.out.println(1 - ans);
     }
+
+    @Test
+    public void test4() {
+        System.out.println((1 << 31) - 1);
+        System.out.println(Integer.MIN_VALUE);
+    }
+
 }

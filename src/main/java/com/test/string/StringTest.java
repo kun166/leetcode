@@ -55,18 +55,18 @@ public class StringTest {
         System.out.println(idCard.substring(idCard.length() - 4));
     }
 
-    private String hideIdCardNo(String idCardNo) {
-        if (StringUtils.isBlank(idCardNo)) {
-            return null;
+    @Test
+    public void test11() {
+        String str = "1. MinorGC：copy算法，回收新⽣代，回收eden、from，存活的放在to，多次回收后还存活的放到⽼年代中\n" +
+                "2. ⽼年代回收⽤标记清除、标记整理算法，在回收的时候，finailize()可复活⼀次，只能调⽤⼀次\n" +
+                "3. 标记-清除：先标记再清除，会产⽣内存碎⽚\n" +
+                "4. 标记-复制：两块空间来回复制，内存利⽤为原来的⼀半\n" +
+                "5. 标记-整理：将存活对象向⼀个⽅向移动，释放末尾空间\n" +
+                "6. 空闲对象的查找⽅法：引⽤计数器法、根搜索法\n" +
+                "7. GC Root：堆对象引⽤，⽅法区常量引⽤，静态对象引⽤，本地⽅法栈对象引⽤（都是对象引⽤）";
+        String[] array = str.split("\n");
+        for (String s : array) {
+            System.out.println(s.split(" ")[1]);
         }
-        if (idCardNo.length() <= 8) {
-            return idCardNo;
-        }
-        StringBuilder builder = new StringBuilder(idCardNo.substring(0, 6));
-        for (int i = 6; i < idCardNo.length() - 2; i++) {
-            builder.append("*");
-        }
-        builder.append(idCardNo.substring(idCardNo.length() - 2));
-        return builder.toString();
     }
 }
