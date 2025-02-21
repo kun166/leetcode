@@ -43,6 +43,7 @@ public class OfficeSolutionSecond {
                 if (i != 0 && i != numRows - 1 && j + cycleLen - i < n)
                     // i != 0 && i != numRows - 1 既不是第一个行，也不是最后一行
                     // cycleLen - i是离本次循环开始下标j的距离
+                    // 这个单独说明一下,因为j是cycleLen的整数倍，j+cycleLen就是本次周期的最后,当前位置离该位置的距离是i
                     ret.append(s.charAt(j + cycleLen - i));
             }
         }

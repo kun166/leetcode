@@ -65,5 +65,6 @@ s=nb
 250,呃，&&与&的重要性啊，既然两者存在，就肯定有适用的地方
 285,对二叉树的性质还是不够熟悉
 311,看下大神的稀疏矩阵解法
+470,呃，好吧。这是为纯算法岗设计的吗？https://leetcode.cn/problems/implement-rand10-using-rand7/solution/gong-shui-san-xie-k-jin-zhi-zhu-wei-shen-zmd4/
 
 

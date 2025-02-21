@@ -79,9 +79,11 @@ public class OfficialFirst20230425 {
             int l = mid + 1;
             int r = mid + 1;
             while (i <= mid) {
+                // 这个while跳出循环的条件,l>right或者 sum[l] - sum[i] >= lower
                 while (l <= right && sum[l] - sum[i] < lower) {
                     l++;
                 }
+                // 这个while跳出循环的条件,r>right或者 sum[r] - sum[i] > upper
                 while (r <= right && sum[r] - sum[i] <= upper) {
                     r++;
                 }

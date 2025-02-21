@@ -25,7 +25,7 @@ public class BufferTest {
             ByteBuffer buffer = ByteBuffer.allocate(1024);
             while (channel.read(buffer) != -1) {
                 buffer.flip();
-                buffer.array();
+                //buffer.array();
                 System.out.println(new String(buffer.array(), "utf-8"));
             }
         } catch (IOException e) {

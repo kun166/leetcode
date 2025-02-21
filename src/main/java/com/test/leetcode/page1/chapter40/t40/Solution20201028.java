@@ -1,5 +1,6 @@
 package com.test.leetcode.page1.chapter40.t40;
 
+import com.alibaba.fastjson.JSON;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -17,13 +18,7 @@ public class Solution20201028 {
     @Test
     public void test() {
         int[] candidates = {10, 1, 2, 7, 6, 1, 5};
-        List<List<Integer>> list = combinationSum2(candidates, 8);
-        for (List<Integer> l : list) {
-            System.out.println();
-            for (Integer i : l) {
-                System.out.print(i);
-            }
-        }
+        System.out.println(combinationSum2(candidates, 8));
     }
 
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {

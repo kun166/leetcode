@@ -1,10 +1,6 @@
 package com.test.test;
 
-import org.junit.Test;
-
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * @program: leetcode
@@ -14,11 +10,13 @@ import java.util.Map;
  */
 public class MapTest {
 
-    @Test
-    public void test() {
-        Map<Integer, List<Integer>> map = new HashMap<>();
-        for (int i = 0; i < 50; i++) {
-            // List<Integer>>
+
+    public static void main(String[] args) {
+        HashMap<Integer, Integer> map = new HashMap<>(1 << 10, 1.0f);
+        int number = 1, step = 1 << 10;
+        for (int i = 0; i < 9; i++) {
+            map.put(number, number);
+            number += step;
         }
     }
 }

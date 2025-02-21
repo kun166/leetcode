@@ -1,11 +1,13 @@
 package com.test.list;
 
 import com.alibaba.fastjson.JSON;
+import com.test.object.Person;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @program: leetcode
@@ -43,5 +45,22 @@ public class ListTest {
         }
         System.out.println(JSON.toJSONString(list));
 
+    }
+
+    @Test
+    public void testRemove() {
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            list.add(i);
+        }
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i) == 5 || list.get(i) == 8) {
+                list.remove(i);
+                i--;
+            }
+        }
+        for (int i : list) {
+            System.out.println(i);
+        }
     }
 }

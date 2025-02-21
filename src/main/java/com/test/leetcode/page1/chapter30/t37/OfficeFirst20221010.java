@@ -56,6 +56,7 @@ public class OfficeFirst20221010 {
                 line[i][digit] = column[j][digit] = block[i / 3][j / 3][digit] = true;
                 board[i][j] = (char) (digit + '0' + 1);
                 dfs(board, pos + 1);
+                // 这个地方没进行回溯，因为会被下一次循环覆盖
                 line[i][digit] = column[j][digit] = block[i / 3][j / 3][digit] = false;
             }
         }
