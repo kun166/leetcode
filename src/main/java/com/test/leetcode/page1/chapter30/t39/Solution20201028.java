@@ -27,7 +27,7 @@ public class Solution20201028 {
 
     /**
      * 递归+回溯
-     *
+     * <p>
      * 参考{@link Solution20250221}
      *
      * @param candidates
@@ -42,14 +42,14 @@ public class Solution20201028 {
     }
 
     public void combinationSum(List<List<Integer>> result, List<Integer> list, int index, int[] candidates, int target) {
+        if (target == 0) {
+            result.add(new ArrayList<>(list));
+            return;
+        }
+        if (target < 0) {
+            return;
+        }
         for (int i = index; i < candidates.length; i++) {
-            if (target == 0) {
-                result.add(new ArrayList<>(list));
-                return;
-            }
-            if (target < 0) {
-                return;
-            }
             list.add(candidates[i]);
             combinationSum(result, list, i, candidates, target - candidates[i]);
             list.remove(list.size() - 1);
