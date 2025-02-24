@@ -1,10 +1,6 @@
 package com.test.test;
 
-import com.sun.xml.internal.xsom.XSUnionSimpleType;
-
 import javax.annotation.Resource;
-import java.io.*;
-import java.lang.reflect.Field;
 
 /**
  * @ClassName: SpringAsmTest
