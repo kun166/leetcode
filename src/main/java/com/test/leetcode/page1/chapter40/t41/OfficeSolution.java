@@ -11,7 +11,7 @@ public class OfficeSolution {
 
     public int firstMissingPositive(int[] nums) {
         int n = nums.length;
-        // 先将负数，转化成一个大于nums数组长度的值。遍历完后就没有负数了
+        // 先将非正数，转化成一个大于nums数组长度的值。遍历完后就没有负数了
         for (int i = 0; i < n; ++i) {
             if (nums[i] <= 0) {
                 nums[i] = n + 1;
