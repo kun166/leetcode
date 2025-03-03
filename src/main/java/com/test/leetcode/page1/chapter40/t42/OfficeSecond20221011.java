@@ -54,6 +54,7 @@ public class OfficeSecond20221011 {
                 // left坐标和当前坐标的距离，也即宽度
                 int currWidth = i - left - 1;
                 // 宽度，注意比top小的那些存水点都已经被top计算累加过了，所以这个地方高度需要减去top的高度
+                // 注意：下面的代码是Math.min(height[left], height[i])，然后再减去height[top]
                 int currHeight = Math.min(height[left], height[i]) - height[top];
                 // 累加
                 ans += currWidth * currHeight;

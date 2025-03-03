@@ -87,6 +87,8 @@ public class StringTest {
 
         System.out.println("申请未通过？\n点击查看原因，获得授信评估机会");
 
+        System.out.println("time_Limit_Depreciate".toLowerCase());
+
 
     }
 
