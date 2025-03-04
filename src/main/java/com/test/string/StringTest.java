@@ -40,7 +40,7 @@ public class StringTest {
 
     @Test
     public void test() {
-        System.out.println("customerIsContains".toUpperCase());
+        System.out.println("jsbFinishTime".toUpperCase());
         System.out.println("CREDIT_PRE_MEM_CREDIT_TASK".toLowerCase());
         System.out.println(StringTest.class.getName());
     }
