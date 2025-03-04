@@ -89,6 +89,8 @@ public class StringTest {
 
         System.out.println("time_Limit_Depreciate".toLowerCase());
 
+        System.out.println('z'-'A');
+
 
     }
 

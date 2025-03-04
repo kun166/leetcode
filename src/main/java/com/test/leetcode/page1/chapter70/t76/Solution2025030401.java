@@ -21,6 +21,8 @@ public class Solution2025030401 {
 
     /**
      * 先别管进阶了,先搞定这道困难题再说
+     * <p>
+     * 我擦，经过好多次错误调整……居然做出来了
      *
      * @param s
      * @param t
@@ -44,9 +46,11 @@ public class Solution2025030401 {
                 right2++;
             }
 
-            while (right2 == n && map.get(s.charAt(left)) > 0) {
-                map.put(s.charAt(left), map.get(s.charAt(left)) - 1);
-                left++;
+            if (right2 == n) {
+                while (map.get(s.charAt(left)) > 0) {
+                    map.put(s.charAt(left), map.get(s.charAt(left)) - 1);
+                    left++;
+                }
                 if (right1 - left < minRight - minLeft) {
                     minLeft = left;
                     minRight = right1;
