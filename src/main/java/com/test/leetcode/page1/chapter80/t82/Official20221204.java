@@ -31,6 +31,8 @@ public class Official20221204 {
                 }
             } else {
                 // 将当前节点设置为下一个节点
+                // 这里隐藏了一个条件，就是cur.val!=cur.next.val
+                // 如果等于的话，cur就加不进来
                 cur = cur.next;
             }
         }
