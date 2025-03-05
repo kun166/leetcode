@@ -9,6 +9,14 @@ package com.test.leetcode.page1.chapter80.t81;
  */
 public class Solution2025030502 {
 
+
+    /**
+     * 这解答也是错的
+     *
+     * @param nums
+     * @param target
+     * @return
+     */
     public boolean search(int[] nums, int target) {
         int pl = 0, pr = nums.length - 1;
         if (nums[pl] == nums[pr]) {
