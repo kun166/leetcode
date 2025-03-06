@@ -10,6 +10,12 @@ import java.util.Stack;
  */
 public class OfficialSolution {
 
+    /**
+     * 这种方式,不是面试的时候想出来的
+     *
+     * @param heights
+     * @return
+     */
     public int largestRectangleArea(int[] heights) {
         int n = heights.length;
         // 存放左侧小于自己的坐标
