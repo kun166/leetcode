@@ -16,6 +16,13 @@ public class Solution {
         if (n != m) {
             return false;
         }
+        /**
+         * 1.状态定义:
+         * f[i][j][len]: s1从第i个字符开始,s2从第j个字符开始,长度为len的字符串是否为扰乱字符串。
+         * 2.状态转移:
+         * f[i][j][len] |=
+         * k:range(1, len) ( f[i,j,k] && f[i+k,j+k,len - k] ||  f[i,j + len - k,k] && f[i+k, j, len - k])
+         */
         boolean[][][] dp = new boolean[n][n][n + 1];
         // 初始化单个字符的情况
         for (int i = 0; i < n; i++) {
