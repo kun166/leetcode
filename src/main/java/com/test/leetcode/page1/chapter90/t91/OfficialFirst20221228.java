@@ -27,10 +27,18 @@ public class OfficialFirst20221228 {
     public int numDecodings(String s) {
         int n = s.length();
         int[] f = new int[n + 1];
+        // 哨兵
         f[0] = 1;
+        /**
+         * 这题根本不是拆分和组合的问题啊……
+         * 这题是能不能是一个合法数的问题
+         * 当前单个字符是一个合法数, f(n-1)
+         * 当前字符和前一个字符能组成一个合法数,f(n-2)
+         */
         for (int i = 1; i <= n; ++i) {
             if (s.charAt(i - 1) != '0') {
                 // 这个地方应该理解为，如果s.charAt(i - 1) == '0'，f[i]=0，否则f[i] = f[i - 1];
+                // 当前字符不为'0',就可以f[i] = f[i - 1]
                 f[i] += f[i - 1];
             }
             // s.charAt(i - 2) != '0'，保证两位数，不以'0'开头，比如"2101"的时候，"01"不能算
