@@ -11,6 +11,7 @@ public class OfficialSecond20230127 {
 
     /**
      * 贪心算法
+     * 呃，再看这代码,真的思路不一样就是不一样……
      *
      * @param prices
      * @return
