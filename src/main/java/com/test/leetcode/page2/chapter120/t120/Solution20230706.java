@@ -1,6 +1,5 @@
 package com.test.leetcode.page2.chapter120.t120;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**

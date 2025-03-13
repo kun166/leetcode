@@ -9,6 +9,12 @@ package com.test.leetcode.page2.chapter110.t116;
  */
 public class Official20230120 {
 
+    /**
+     * 呃，好吧，这个题的前提是完美二叉树……
+     *
+     * @param root
+     * @return
+     */
     public Node connect(Node root) {
         if (root == null) {
             return root;
