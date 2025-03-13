@@ -23,19 +23,12 @@ public class StringTest {
 
     @Test
     public void testIntern() {
-        String str = "执行用时：\n" +
-                "4 ms\n" +
-                ", 在所有 Java 提交中击败了\n" +
-                "100.00%\n" +
-                "的用户\n" +
-                "内存消耗：\n" +
-                "42.2 MB\n" +
-                ", 在所有 Java 提交中击败了\n" +
-                "67.71%\n" +
-                "的用户\n" +
-                "通过测试用例：\n" +
-                "60 / 60";
-        System.out.println(str.replaceAll("\n", ""));
+        String str = "60.27\n" +
+                "MB\n" +
+                "击败\n" +
+                "72.25%\n";
+        str = str.replaceAll("\n", "").replaceAll("击败", "\t击败");
+        System.out.println(str);
     }
 
     @Test
