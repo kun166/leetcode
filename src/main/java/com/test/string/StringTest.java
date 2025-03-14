@@ -23,10 +23,10 @@ public class StringTest {
 
     @Test
     public void testIntern() {
-        String str = "42.02\n" +
+        String str = "60.18\n" +
                 "MB\n" +
                 "击败\n" +
-                "91.18%\n";
+                "5.00%";
         str = str.replaceAll("\n", "").replaceAll("击败", "\t击败");
         System.out.println(str);
     }
@@ -72,9 +72,9 @@ public class StringTest {
 
     @Test
     public void test11() {
-        System.out.println('z'-'A');
-        System.out.println('z'-'Z');
-        System.out.println('P'-'0');
+        System.out.println('z' - 'A');
+        System.out.println('z' - 'Z');
+        System.out.println('P' - '0');
 
 
     }
