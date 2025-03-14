@@ -23,10 +23,10 @@ public class StringTest {
 
     @Test
     public void testIntern() {
-        String str = "43.45\n" +
+        String str = "42.02\n" +
                 "MB\n" +
                 "击败\n" +
-                "68.18%\n";
+                "91.18%\n";
         str = str.replaceAll("\n", "").replaceAll("击败", "\t击败");
         System.out.println(str);
     }
@@ -72,20 +72,9 @@ public class StringTest {
 
     @Test
     public void test11() {
-//        String jsonStr = "{\\\"SOURCE\\\":\\\"RISK_MAN\\\",\\\"SUBJECT\\\":\\\"CONSUMERLOAN_WITHDRAW_RESULT\\\",\\\"BUSINESS_DATA\\\":{\\\"zyRejectRuleInd\\\":\\\"-99\\\",\\\"isDowngradeAdjLine\\\":\\\"-99\\\",\\\"subject\\\":\\\"2\\\",\\\"rejectDesc\\\":\\\"-99\\\",\\\"cheatd\\\":-99,\\\"assetSegmentLevel\\\":\\\"L2\\\",\\\"isDowngradeAdjProd\\\":\\\"-99\\\",\\\"procInstId\\\":6687244392004471483,\\\"wdPassType\\\":\\\"-99\\\",\\\"rejectDeadline\\\":2160.0,\\\"customerDowngradeLabel\\\":\\\"-99\\\",\\\"applyId\\\":\\\"6568838122241396647\\\",\\\"preMemCreditResult\\\":\\\"1\\\",\\\"rejectCode\\\":\\\"ZX27\\\",\\\"withdrawNo\\\":\\\"6298437701508228944\\\",\\\"creditResult\\\":-1,\\\"isNewBorrow\\\":\\\"1\\\",\\\"downgradeLine\\\":\\\"-99\\\",\\\"downgradeProdGroup\\\":\\\"-99\\\"}}";
-//        jsonStr = jsonStr.replaceAll("\\\\", "");
-//        jsonStr = jsonStr.replaceAll("\"\\{", "{");
-//        jsonStr = jsonStr.replaceAll("}\"", "}");
-//        System.out.println(jsonStr);
-
-        System.out.println("申请未通过？\n点击查看原因，获得授信评估机会");
-
-        System.out.println("time_Limit_Depreciate".toLowerCase());
-
-        System.out.println('z' - 'A');
-
-        System.out.println((int) 'A');
-        System.out.println((int) 'z');
+        System.out.println('z'-'A');
+        System.out.println('z'-'Z');
+        System.out.println('P'-'0');
 
 
     }
