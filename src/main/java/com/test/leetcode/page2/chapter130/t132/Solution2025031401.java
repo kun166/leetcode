@@ -1,5 +1,7 @@
 package com.test.leetcode.page2.chapter130.t132;
 
+import org.junit.Test;
+
 import java.util.Arrays;
 
 /**
@@ -11,8 +13,16 @@ import java.util.Arrays;
  */
 public class Solution2025031401 {
 
+
+    @Test
+    public void test() {
+        System.out.println(minCut("ab"));
+    }
+
     /**
      * 这题还是要DP啊……
+     * 31ms	击败78.76%
+     * 45.95MB	击败56.03%
      *
      * @param s
      * @return
