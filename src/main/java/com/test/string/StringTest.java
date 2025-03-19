@@ -23,19 +23,28 @@ public class StringTest {
 
     @Test
     public void testIntern() {
-        String str = "45.95\n" +
+        String str = "55.35\n" +
                 "MB\n" +
                 "击败\n" +
-                "56.03%\n";
+                "32.60%";
         str = str.replaceAll("\n", "").replaceAll("击败", "\t击败");
         System.out.println(str);
     }
 
     @Test
     public void test() {
-        System.out.println("jsbFinishTime".toUpperCase());
+        System.out.println("bb_oa_name".toUpperCase());
         System.out.println("CREDIT_PRE_MEM_CREDIT_TASK".toLowerCase());
         System.out.println(StringTest.class.getName());
+        List<String> list = new ArrayList<>();
+//        list.add("oa1");
+//        list.add("oa2");
+//        list.add("oa3");
+        System.out.println(JSON.toJSONString(list));
+
+        String str = "[\"oa1\",\"oa2\",\"oa3\"]";
+        list = JSON.parseObject(str, List.class);
+        System.out.println(list.get(2));
     }
 
 
