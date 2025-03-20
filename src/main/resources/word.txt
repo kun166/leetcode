@@ -1,0 +1,6 @@
+row:行
+column:列
+previous:上一个
+half:一半
+fast:快指针
+slow:慢指针
