@@ -22,6 +22,9 @@ public class Solution2025032001 {
         /**
          * 呃，感觉得用链表啊……
          * 需要注意的是,put也改变链表位置
+         * <p>
+         * 72ms	击败7.24%
+         * 124.79MB	击败5.02%
          *
          * @param capacity
          */
