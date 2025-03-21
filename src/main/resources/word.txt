@@ -4,3 +4,4 @@ previous:上一个
 half:一半
 fast:快指针
 slow:慢指针
+minus 英/ˈmaɪnəs/  负数

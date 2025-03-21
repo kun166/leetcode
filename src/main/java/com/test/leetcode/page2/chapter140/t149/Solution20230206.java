@@ -12,6 +12,13 @@ import java.util.Map;
  */
 public class Solution20230206 {
 
+    /**
+     * 呃，好吧，我还以为这是某个大神的解法呢……
+     * 原来是我自己的写的解,且是完全错误的……
+     *
+     * @param points
+     * @return
+     */
     public int maxPoints(int[][] points) {
         int max = 0;
         Map<Integer, Integer> map = new HashMap<>();
