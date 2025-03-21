@@ -10,6 +10,13 @@ import com.test.leetcode.ListNode;
  */
 public class Solution {
 
+    /**
+     * 呃，这种做法,还不如两个链表都翻转……
+     *
+     * @param headA
+     * @param headB
+     * @return
+     */
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         int lengthA = length(headA);
         int lengthB = length(headB);
