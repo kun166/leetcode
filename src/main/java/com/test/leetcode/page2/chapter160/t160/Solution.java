@@ -12,6 +12,7 @@ public class Solution {
 
     /**
      * 呃，这种做法,还不如两个链表都翻转……
+     * 呃，没法两个链表都翻转……
      *
      * @param headA
      * @param headB
