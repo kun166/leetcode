@@ -23,6 +23,8 @@ public class Solution2025032401 {
      * <p>
      * 1ms	击败73.50%
      * 40.79MB	击败44.69%
+     * <p>
+     * 唉，感觉不如23年写的简洁……
      *
      * @param version1
      * @param version2

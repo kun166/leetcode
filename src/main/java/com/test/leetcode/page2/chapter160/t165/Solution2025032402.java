@@ -20,6 +20,8 @@ public class Solution2025032402 {
      * 练练基本功吧
      * 0ms	击败100.00%
      * 40.74MB	击败58.39%
+     * <p>
+     * 不如官方2写的简洁……
      *
      * @param version1
      * @param version2
