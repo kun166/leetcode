@@ -5,3 +5,6 @@ half:一半
 fast:快指针
 slow:慢指针
 minus 英/ˈmaɪnəs/  负数
+parse 英/pɑːz/   对（句子）作语法分析；仔细研究，分析;（计算机）句法分析，句法分析结果。Integer.parseInt
+
+
