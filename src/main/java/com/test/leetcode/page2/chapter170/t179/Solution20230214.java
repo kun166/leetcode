@@ -16,6 +16,12 @@ public class Solution20230214 {
         System.out.println(largestNumber(new int[]{3, 30, 34, 5, 9}));
     }
 
+    /**
+     * 嗯,这个方法没执行通过,即是错误的……
+     *
+     * @param nums
+     * @return
+     */
     public String largestNumber(int[] nums) {
         StringBuffer buffer = new StringBuffer();
         int length = nums.length;
