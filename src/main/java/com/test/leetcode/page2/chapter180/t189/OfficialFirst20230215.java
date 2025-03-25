@@ -12,6 +12,9 @@ public class OfficialFirst20230215 {
     /**
      * 呃， 这个方式比SolutionSecond20230215慢
      * 这就说明原生的System.arraycopy()确实牛啊
+     * <p>
+     * 唉,这……这……
+     * 想出来这方法的也是天才
      *
      * @param nums
      * @param k
