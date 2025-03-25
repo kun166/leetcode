@@ -23,10 +23,10 @@ public class StringTest {
 
     @Test
     public void testIntern() {
-        String str = "41.17\n" +
+        String str = "40.52\n" +
                 "MB\n" +
                 "击败\n" +
-                "92.59%\n";
+                "98.17%";
         str = str.replaceAll("\n", "").replaceAll("击败", "\t击败");
         System.out.println(str);
     }
