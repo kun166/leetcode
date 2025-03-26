@@ -31,6 +31,9 @@ public class Solution20230216 {
         dp[0] = 0;
         dp[1] = nums[0];
         for (int i = 1; i < n; i++) {
+            /**
+             * 呃,这……牛逼,居然可以这么写……
+             */
             // 当前房间偷的最大值
             int value = dp[0] + nums[i];
             // 当前房间不偷的最大值
