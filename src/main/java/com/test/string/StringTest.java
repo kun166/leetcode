@@ -33,8 +33,8 @@ public class StringTest {
 
     @Test
     public void test() {
-        System.out.println("bb_oa_name".toUpperCase());
-        System.out.println("CREDIT_PRE_MEM_CREDIT_TASK".toLowerCase());
+        System.out.println("popup_list_config".toUpperCase());
+        System.out.println("POPUP_LIST_CONFIG".toLowerCase());
         System.out.println(StringTest.class.getName());
         List<String> list = new ArrayList<>();
 //        list.add("oa1");
