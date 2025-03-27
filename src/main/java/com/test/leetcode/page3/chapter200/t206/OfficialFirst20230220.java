@@ -18,6 +18,9 @@ public class OfficialFirst20230220 {
      * @return
      */
     public ListNode reverseList(ListNode head) {
+        /**
+         * 牛逼,唉,唉,代码写的是真简洁
+         */
         ListNode prev = null;
         ListNode curr = head;
         while (curr != null) {

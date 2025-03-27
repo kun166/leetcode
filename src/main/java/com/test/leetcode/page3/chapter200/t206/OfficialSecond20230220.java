@@ -11,6 +11,12 @@ import com.test.leetcode.ListNode;
  */
 public class OfficialSecond20230220 {
 
+    /**
+     * 这写法也牛逼啊……
+     *
+     * @param head
+     * @return
+     */
     public ListNode reverseList(ListNode head) {
         if (head == null || head.next == null) {
             return head;
