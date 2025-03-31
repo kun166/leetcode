@@ -23,14 +23,13 @@ public class StringTest {
 
     @Test
     public void testIntern() {
-        String str = "40.12\n" +
+        String str = "44.05\n" +
                 "MB\n" +
                 "击败\n" +
-                "85.84%\n";
+                "68.23%\n";
         str = str.replaceAll("\n", "").replaceAll("击败", "\t击败");
         System.out.println(str);
 
-        System.out.println(new StringBuilder("ababbbabbaba").reverse());
     }
 
     @Test
