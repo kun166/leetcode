@@ -7,7 +7,7 @@ package com.test.test;
  * @Date: 2024/5/15 16:51
  * @Version: 1.0
  */
-public class retryLearn {
+public class RetryLearn {
 
     static void retryContinue() {
         System.out.println("执行retryContinue:");
